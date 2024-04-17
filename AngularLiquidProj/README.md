@@ -1,3 +1,6 @@
+
+# Tests
+jasmine is installed so please make sure you import jasmine to write your spec.ts test files.
 # AngularLiquidProj
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
