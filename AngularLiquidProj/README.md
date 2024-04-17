@@ -1,4 +1,5 @@
-
+# Code changes and additions 
+Please create feature branch and then create pull request and ping in the group.
 # Tests
 jasmine is installed so please make sure you import jasmine to write your spec.ts test files.
 # AngularLiquidProj
