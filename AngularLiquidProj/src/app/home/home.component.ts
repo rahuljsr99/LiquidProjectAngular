@@ -11,5 +11,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  getDate(): Date {
+    return new Date('1999-04-19T00:00:00');
+  }
+ 
 }
