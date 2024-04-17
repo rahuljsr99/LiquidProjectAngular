@@ -1,0 +1,35 @@
+/* Custom styles for the jumbotron */
+.jumbotron {
+    background: radial-gradient(circle at 108.9% 51.2%, rgb(255, 124, 0) 0%, rgb(255, 124, 0) 15.9%, rgb(255, 163, 77) 15.9%, rgb(255, 163, 77) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
+    background-size: cover; /* Cover the entire jumbotron */
+    background-position: center; /* Center the background image */
+    color: white;
+    padding: 2rem 1rem; /* Padding */
+    border-radius: 0; /* Remove border radius */
+  }
+  
+  .container {
+    max-width: 100%;
+    height: 300px; /* Ensure container expands to full width */
+  }
+  
+  .display-4 {
+    font-size: 2.5rem; /* Adjust heading font size */
+    font-weight: bold; /* Make heading bold */
+  }
+  
+  .lead {
+    font-size: 1.25rem; /* Adjust lead font size */
+    font-weight: 300; /* Light font weight */
+    margin-bottom: 2rem; /* Bottom margin */
+  }
+  #Title{
+    position: relative;
+    top:70px;
+  }
+  #Description{
+    position: relative;
+    top:90px;
+  }
+  
+  
