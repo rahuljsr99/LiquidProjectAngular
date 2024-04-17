@@ -8,7 +8,10 @@ import { Component, Input } from '@angular/core';
 export class NavigationBarComponent {
   @Input() pageTitle: string = '';
   @Input() Link1: string = '';
+  @Input() Link1Route: string = '';
   @Input() Link2: string = '';
+  @Input() Link2Route: string = '';
   @Input() Link3: string = '';
+  @Input() Link3Route: string = '';
   @Input() Link4: string = '';
 }
