@@ -1,6 +1,7 @@
 /* Custom styles for the jumbotron */
 .jumbotron {
-    background: radial-gradient(circle at 108.9% 51.2%, rgb(255, 124, 0) 0%, rgb(255, 124, 0) 15.9%, rgb(255, 163, 77) 15.9%, rgb(255, 163, 77) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
+    background-image: url(./images/theatreBan.jpg);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.7);
     background-size: cover; /* Cover the entire jumbotron */
     background-position: center; /* Center the background image */
     color: white;

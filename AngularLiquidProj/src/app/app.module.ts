@@ -9,6 +9,7 @@ import { CarouselComponent } from './CommonComponents/carousel/carousel.componen
 import { BannerComponent } from './CommonComponents/banner/banner.component';
 import { ParallaxComponent } from './CommonComponents/parallax/parallax.component';
 import { FooterComponent } from './CommonComponents/footer/footer.component';
+import { FeaturedMoviesComponent } from './CommonComponents/featured-movies/featured-movies.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import { FooterComponent } from './CommonComponents/footer/footer.component';
     CarouselComponent,
     BannerComponent,
     ParallaxComponent,
-    FooterComponent
+    FooterComponent,
+    FeaturedMoviesComponent
   ],
   imports: [
     BrowserModule,
