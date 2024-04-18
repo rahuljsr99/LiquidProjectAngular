@@ -10,6 +10,7 @@ import { BannerComponent } from './CommonComponents/banner/banner.component';
 import { ParallaxComponent } from './CommonComponents/parallax/parallax.component';
 import { FooterComponent } from './CommonComponents/footer/footer.component';
 import { FeaturedMoviesComponent } from './CommonComponents/featured-movies/featured-movies.component';
+import { QuoteBoxComponent } from './CommonComponents/quote-box/quote-box.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { FeaturedMoviesComponent } from './CommonComponents/featured-movies/feat
     BannerComponent,
     ParallaxComponent,
     FooterComponent,
-    FeaturedMoviesComponent
+    FeaturedMoviesComponent,
+    QuoteBoxComponent
   ],
   imports: [
     BrowserModule,

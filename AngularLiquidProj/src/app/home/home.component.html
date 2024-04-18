@@ -1,9 +1,9 @@
 <app-navigation-bar 
 [pageTitle]="'Home'"
-[Link1]="'JioCinema'"
-[Link1Route]="'https://www.jiocinema.com/'"
-[Link2]="'NetFlix'"
-[Link2Route]="'https://www.netflix.com/in/'"
+[Link1]="'Movies'"
+[Link1Route]="'#'"
+[Link2]="'TV Shows'"
+[Link2Route]="'#'"
 [Link3]="'Amazon Prime'"
 [Link3Route]="'https://www.primevideo.com/'"
 [Link4]="'More features!'">
@@ -13,4 +13,8 @@
 [Title]="'Featuring'" 
 [CardTitle]="'Dune: Part Two'" 
 [ShortSummary]="'Paul Atreides journey to find revenge on the conspirators who destroyed his family, while also uniting with Chani and the Fremen.'"
-[Rating]="'IMDB Rating 8.8/10'"></app-featured-movies>
+[Rating]="'IMDB Rating 8.8/10'"
+[CheckoutButtonText]="'Check it out now'"></app-featured-movies>
+<app-quote-box [QuoteText]="'Movies can and do have tremendous influence in shaping young lives in the realm of entertainment towards the ideals and objectives of normal adulthood.'" [CreditText]="'by the great '" [QuotedBy]="'Walt Disney'"></app-quote-box>
+<app-parallax></app-parallax>
+<app-footer></app-footer>

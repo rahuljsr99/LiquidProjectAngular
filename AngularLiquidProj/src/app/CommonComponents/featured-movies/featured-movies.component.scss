@@ -3,6 +3,7 @@
     border-radius: 0;
     background-image: url(./posters/dune2.jpg);
     background-size: cover;
+    box-shadow: 0px 10px 10px rgba(40, 39, 39, .4);
 }
 .card-text{
     position: relative;
@@ -15,6 +16,12 @@
 .rating{
     position: relative;
     top:100px;
+}
+.checkout-featured-movie{
+    position:relative;
+
+    top: 240px; 
+    
 }
 
 ;

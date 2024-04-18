@@ -1,0 +1,16 @@
+.container{
+    position: relative;
+    height: 400px;
+   
+    padding: 100px;
+}
+.quote-container{
+    border-top : 1px solid black;
+    border-bottom : 1px solid black;
+    height: 120px;
+    padding-top: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.border-container{
+    box-shadow: 20px 20px 10px rgba(40, 39, 39, .3);
+}

@@ -10,4 +10,5 @@ export class FeaturedMoviesComponent {
 @Input() CardTitle:string = '';
 @Input() ShortSummary:string = '';
 @Input() Rating:string = '';
+@Input() CheckoutButtonText:string = '';
 }
