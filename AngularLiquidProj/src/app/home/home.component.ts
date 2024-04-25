@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) { }
 
   ngOnInit(): void {
   }
@@ -15,4 +16,9 @@ export class HomeComponent implements OnInit {
     return new Date('1999-04-19T00:00:00');
   }
  
+  signup(): void {
+    console.log('Signup button clicked');
+    this.route.navigate(['signup']);
+  }
+
 }
