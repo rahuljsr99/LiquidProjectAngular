@@ -13,6 +13,7 @@ import { ParallaxComponent } from './CommonComponents/parallax/parallax.componen
 import { FooterComponent } from './CommonComponents/footer/footer.component';
 import { FeaturedMoviesComponent } from './CommonComponents/featured-movies/featured-movies.component';
 import { QuoteBoxComponent } from './CommonComponents/quote-box/quote-box.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { QuoteBoxComponent } from './CommonComponents/quote-box/quote-box.compon
     FooterComponent,
     FeaturedMoviesComponent,
     QuoteBoxComponent,
+    MovieListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,123 @@
+[
+    {
+      "id": 1,
+      "name": "The Shawshank Redemption",
+      "summary": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+      "director": "Frank Darabont",
+      "cast": ["Tim Robbins", "Morgan Freeman", "Bob Gunton"],
+      "imdbRating": 9.3,
+      "streamingLink": {
+        "amazon": "https://www.amazon.com/Shawshank-Redemption-Tim-Robbins/dp/B0091W7PZM",
+        "netflix": "https://www.netflix.com/in/title/70005379"
+      }
+    },
+    {
+      "id": 2,
+      "name": "The Godfather",
+      "summary": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+      "director": "Francis Ford Coppola",
+      "cast": ["Marlon Brando", "Al Pacino", "James Caan"],
+      "imdbRating": 9.2,
+      "streamingLink": {
+        "amazon": "https://www.amazon.com/The-Godfather-Marlon-Brando/dp/B0013FSLCU",
+        "netflix": "https://www.netflix.com/in/title/60011152"
+      }
+    },
+    {
+      "id": 3,
+      "name": "The Dark Knight",
+      "summary": "When the menace known as The Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.",
+      "director": "Christopher Nolan",
+      "cast": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
+      "imdbRating": 9.0,
+      "streamingLink": {
+        "amazon": "https://www.amazon.com/The-Dark-Knight-Christian-Bale/dp/B001I5TATI",
+        "netflix": "https://www.netflix.com/in/title/70075517"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Schindler's List",
+      "summary": "In German-occupied Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+      "director": "Steven Spielberg",
+      "cast": ["Liam Neeson", "Ralph Fiennes", "Ben Kingsley"],
+      "imdbRating": 8.9,
+      "streamingLink": {
+        "amazon": "https://www.amazon.com/Schindlers-List-Liam-Neeson/dp/B00140V1KS",
+        "netflix": "https://www.netflix.com/in/title/70000581"
+      }
+    },
+    {
+      "id": 5,
+      "name": "The Lord of the Rings: The Return of the King",
+      "summary": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+      "director": "Peter Jackson",
+      "cast": ["Elijah Wood", "Viggo Mortensen", "Ian McKellen"],
+      "imdbRating": 8.9,
+      "streamingLink": {
+        "amazon": "https://www.amazon.com/Lord-Rings-Return-King-Extended/dp/B001AMKVM8",
+        "netflix": "https://www.netflix.com/in/title/60031236"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Pulp Fiction",
+      "summary": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+      "director": "Quentin Tarantino",
+      "cast": ["John Travolta", "Uma Thurman", "Samuel L. Jackson"],
+      "imdbRating": 8.9,
+      "streamingLink": {
+        "amazon": "https://www.amazon.com/Pulp-Fiction-John-Travolta/dp/B001D7TUYU",
+        "netflix": "https://www.netflix.com/in/title/880640"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Forrest Gump",
+      "summary": "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold from the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.",
+      "director": "Robert Zemeckis",
+      "cast": ["Tom Hanks", "Robin Wright", "Gary Sinise"],
+      "imdbRating": 8.8,
+      "streamingLink": {
+        "amazon": "https://www.amazon.com/Forrest-Gump-Tom-Hanks/dp/B0026L7H20",
+        "netflix": "https://www.netflix.com/in/title/60004499"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Inception",
+      "summary": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+      "director": "Christopher Nolan",
+      "cast": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"],
+      "imdbRating": 8.8,
+      "streamingLink": {
+        "amazon": "https://www.amazon.com/Inception-Leonardo-DiCaprio/dp/B0047WJ11G",
+        "netflix": "https://www.netflix.com/in/title/70131314"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Fight Club",
+      "summary": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
+      "director": "David Fincher",
+      "cast": ["Brad Pitt", "Edward Norton", "Helena Bonham Carter"],
+      "imdbRating": 8.8,
+      "streamingLink": {
+        "amazon": "https://www.amazon.com/Fight-Club-Brad-Pitt/dp/B004LWZWGK",
+        "netflix": "https://www.netflix.com/in/title/70000418"
+      }
+    },
+    {
+      "id": 10,
+      "name": "The Matrix",
+      "summary": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+      "director": "Lana Wachowski, Lilly Wachowski",
+      "cast": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"],
+      "imdbRating": 8.7,
+      "streamingLink": {
+        "amazon": "https://www.amazon.com/Matrix-Keanu-Reeves/dp/B0094F77CA",
+        "netflix": "https://www.netflix.com/in/title/20557937"
+      }
+    }
+  ]
+  
