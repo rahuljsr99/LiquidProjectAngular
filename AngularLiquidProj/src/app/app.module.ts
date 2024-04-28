@@ -14,7 +14,9 @@ import { FooterComponent } from './CommonComponents/footer/footer.component';
 import { FeaturedMoviesComponent } from './CommonComponents/featured-movies/featured-movies.component';
 import { QuoteBoxComponent } from './CommonComponents/quote-box/quote-box.component';
 import { signupComponent } from './signup/signup.component';
-
+import { NgxPrintModule } from 'ngx-print';
+import { BuyPageComponent } from './buy-page/buy-page.component';
+import { InvoiceComponent } from './CommonComponents/invoice/invoice.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,12 +29,15 @@ import { signupComponent } from './signup/signup.component';
     FooterComponent,
     FeaturedMoviesComponent,
     QuoteBoxComponent,
-    signupComponent
+    signupComponent,
+    BuyPageComponent,
+    InvoiceComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxPrintModule
   ],
   providers: [],
   bootstrap: [AppComponent]

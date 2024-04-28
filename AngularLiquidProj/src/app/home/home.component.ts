@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Route, Router } from '@angular/router';import movieDb from './../../assets/JsonDb/MovieDb/sampleMovieDb.json';
 
 @Component({
   selector: 'app-home',
@@ -7,18 +7,16 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private route:Router) { }
-
-  ngOnInit(): void {
+    @ViewChild('invoice') invoiceElement!: ElementRef;
+    movies: { title: string; director: string; }[] = movieDb;
+  
+    constructor(private router: Router) { }
+    ngOnInit(): void {
+    console.log(this.movies);
+    }
+    signup(): void {
+      console.log('Signup button clicked');
+      this.router.navigate(['signup']);
+    }
   }
-  getDate(): Date {
-    return new Date('1999-04-19T00:00:00');
-  }
- 
-  signup(): void {
-    console.log('Signup button clicked');
-    this.route.navigate(['signup']);
-  }
 
-}

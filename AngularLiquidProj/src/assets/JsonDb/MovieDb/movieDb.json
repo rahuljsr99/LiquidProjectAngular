@@ -1,0 +1,112 @@
+[
+    {
+      "title": "Inception",
+      "cast": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"],
+      "director": "Christopher Nolan",
+      "rating": 8.8,
+      "links": {
+        "Netflix": "https://www.netflix.com/title/70131314",
+        "Amazon": "https://www.amazon.com/Inception-Leonardo-DiCaprio/dp/B0047WJ11G"
+      },
+      "release_date": "2010-07-16"
+    },
+    {
+      "title": "The Shawshank Redemption",
+      "cast": ["Tim Robbins", "Morgan Freeman"],
+      "director": "Frank Darabont",
+      "rating": 9.3,
+      "links": {
+        "Netflix": "https://www.netflix.com/title/70005379",
+        "Amazon": "https://www.amazon.com/Shawshank-Redemption-Tim-Robbins/dp/B001EB9M6W"
+      },
+      "release_date": "1994-09-23"
+    },
+    {
+      "title": "The Godfather",
+      "cast": ["Marlon Brando", "Al Pacino", "James Caan"],
+      "director": "Francis Ford Coppola",
+      "rating": 9.2,
+      "links": {
+        "Netflix": "https://www.netflix.com/title/60011152",
+        "Amazon": "https://www.amazon.com/Godfather-Marlon-Brando/dp/B0014CKH5W"
+      },
+      "release_date": "1972-03-24"
+    },
+    {
+      "title": "The Dark Knight",
+      "cast": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
+      "director": "Christopher Nolan",
+      "rating": 9.0,
+      "links": {
+        "Netflix": "https://www.netflix.com/title/70095189",
+        "Amazon": "https://www.amazon.com/Dark-Knight-Christian-Bale/dp/B001I189MQ"
+      },
+      "release_date": "2008-07-18"
+    },
+    {
+      "title": "Pulp Fiction",
+      "cast": ["John Travolta", "Uma Thurman", "Samuel L. Jackson"],
+      "director": "Quentin Tarantino",
+      "rating": 8.9,
+      "links": {
+        "Netflix": "https://www.netflix.com/title/880090"
+      },
+      "release_date": "1994-10-14"
+    },
+    {
+      "title": "Forrest Gump",
+      "cast": ["Tom Hanks", "Robin Wright", "Gary Sinise"],
+      "director": "Robert Zemeckis",
+      "rating": 8.8,
+      "links": {
+        "Netflix": "https://www.netflix.com/title/60004499",
+        "Amazon": "https://www.amazon.com/Forrest-Gump-Tom-Hanks/dp/B00JHJH6IQ"
+      },
+      "release_date": "1994-07-06"
+    },
+    {
+      "title": "The Matrix",
+      "cast": ["Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss"],
+      "director": "Lana Wachowski, Lilly Wachowski",
+      "rating": 8.7,
+      "links": {
+        "Netflix": "https://www.netflix.com/title/20557937",
+        "Amazon": "https://www.amazon.com/Matrix-Keanu-Reeves/dp/B0014CBJKG"
+      },
+      "release_date": "1999-03-31"
+    },
+    {
+      "title": "Fight Club",
+      "cast": ["Brad Pitt", "Edward Norton", "Helena Bonham Carter"],
+      "director": "David Fincher",
+      "rating": 8.8,
+      "links": {
+        "Netflix": "https://www.netflix.com/title/70000443",
+        "Amazon": "https://www.amazon.com/Fight-Club-Edward-Norton/dp/B001EBV9ZG"
+      },
+      "release_date": "1999-10-15"
+    },
+    {
+      "title": "Goodfellas",
+      "cast": ["Robert De Niro", "Ray Liotta", "Joe Pesci"],
+      "director": "Martin Scorsese",
+      "rating": 8.7,
+      "links": {
+        "Netflix": "https://www.netflix.com/title/70198791",
+        "Amazon": "https://www.amazon.com/Goodfellas-Robert-Niro/dp/B008RV5F9E"
+      },
+      "release_date": "1990-09-19"
+    },
+    {
+      "title": "The Lord of the Rings: The Return of the King",
+      "cast": ["Elijah Wood", "Viggo Mortensen", "Ian McKellen"],
+      "director": "Peter Jackson",
+      "rating": 8.9,
+      "links": {
+        "Netflix": "https://www.netflix.com/title/60031256",
+        "Amazon": "https://www.amazon.com/Lord-Rings-Return-King/dp/B009EEHV8W"
+      },
+      "release_date": "2003-12-17"
+    }
+  ]
+  
