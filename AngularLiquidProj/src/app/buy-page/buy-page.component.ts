@@ -20,16 +20,23 @@ constructor(private router: Router){}
   
  
   buyItem() {
-    this.isBuying = true; // Start the buying process
-    this.showSpinner = true; // Show the spinner
-
-    setTimeout(() => {
-      // Simulate a delay (replace this with your actual logic)
-      // Once the buying process is complete, update the button state
-      this.isItemBought = true; // Item is bought
-      this.isBuying = false; // Buying process is complete
-      this.showSpinner = false; // Hide the spinner
-    }, 2000); // Simulate a 2-second buying process
+    if (!this.selectedMovie) {
+      
+      console.log('Please select a movie before buying.');
+      return; 
+    }else{
+      this.isBuying = true; // Start the buying process
+      this.showSpinner = true; // Show the spinner
+  
+      setTimeout(() => {
+        // Simulate a delay (replace this with your actual logic)
+        // Once the buying process is complete, update the button state
+        this.isItemBought = true; // Item is bought
+        this.isBuying = false; // Buying process is complete
+        this.showSpinner = false; // Hide the spinner
+      }, 2000); // Simulate a 2-second buying process
+    }
+   
   }
   printInvoice() {
     //const invoiceContent = this.generateInvoiceContent();
