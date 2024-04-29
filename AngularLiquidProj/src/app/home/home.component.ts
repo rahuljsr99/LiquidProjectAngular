@@ -10,13 +10,10 @@ export class HomeComponent implements OnInit {
     @ViewChild('invoice') invoiceElement!: ElementRef;
     movies: { title: string; director: string; }[] = movieDb;
   
-    constructor(private router: Router) { }
+    constructor() { }
     ngOnInit(): void {
     console.log(this.movies);
     }
-    signup(): void {
-      console.log('Signup button clicked');
-      this.router.navigate(['signup']);
-    }
+    
   }
 
