@@ -13,6 +13,10 @@ import { ParallaxComponent } from './CommonComponents/parallax/parallax.componen
 import { FooterComponent } from './CommonComponents/footer/footer.component';
 import { FeaturedMoviesComponent } from './CommonComponents/featured-movies/featured-movies.component';
 import { QuoteBoxComponent } from './CommonComponents/quote-box/quote-box.component';
+import { signupComponent } from './signup/signup.component';
+
+import { BuyPageComponent } from './buy-page/buy-page.component';
+import { InvoiceComponent } from './CommonComponents/invoice/invoice.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -29,11 +33,15 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     FeaturedMoviesComponent,
     QuoteBoxComponent,
+    signupComponent,
+    BuyPageComponent,
+    InvoiceComponent,
     MovieListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     FormsModule,
     HttpClientModule
   ],
