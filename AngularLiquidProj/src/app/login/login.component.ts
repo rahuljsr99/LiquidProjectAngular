@@ -12,7 +12,7 @@ import { AuthService } from '../Services/Auth_Service/auth.service';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent implements OnInit{
-    constructor(private auth: AuthService , private Router: Router){}
+    constructor(private auth: AuthService , private Router: Router, private route:Router){}
     Username ='';
     Password='';
     errorMssg='';
@@ -40,6 +40,11 @@ login(){
         this.errorMssg='Invalid Credentials';
     }
   }
+}
+
+signup(): void {
+  console.log('Signup button clicked');
+  this.route.navigate(['signup']);
 }
  
 }

@@ -8,7 +8,7 @@ import { Route, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private route:Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -16,9 +16,4 @@ export class HomeComponent implements OnInit {
     return new Date('1999-04-19T00:00:00');
   }
  
-  signup(): void {
-    console.log('Signup button clicked');
-    this.route.navigate(['signup']);
-  }
-
 }
