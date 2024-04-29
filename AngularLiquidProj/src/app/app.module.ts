@@ -14,9 +14,13 @@ import { FooterComponent } from './CommonComponents/footer/footer.component';
 import { FeaturedMoviesComponent } from './CommonComponents/featured-movies/featured-movies.component';
 import { QuoteBoxComponent } from './CommonComponents/quote-box/quote-box.component';
 import { signupComponent } from './signup/signup.component';
-import { NgxPrintModule } from 'ngx-print';
+
 import { BuyPageComponent } from './buy-page/buy-page.component';
 import { InvoiceComponent } from './CommonComponents/invoice/invoice.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,12 +36,14 @@ import { InvoiceComponent } from './CommonComponents/invoice/invoice.component';
     signupComponent,
     BuyPageComponent,
     InvoiceComponent,
+    MovieListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgxPrintModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

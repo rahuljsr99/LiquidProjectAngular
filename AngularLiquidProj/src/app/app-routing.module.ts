@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { signupComponent } from './signup/signup.component';
 import { BuyPageComponent } from './buy-page/buy-page.component';
 import { InvoiceComponent } from './CommonComponents/invoice/invoice.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch:'full' },
@@ -14,6 +15,10 @@ const routes: Routes = [
  //{ path: '**', component: LoginComponent }, // Add other routes if needed
  { path: 'buy', component: BuyPageComponent },
  { path: 'invoice', component: InvoiceComponent },
+
+ //{ path: '**', component: LoginComponent }, 
+ // Add other routes if needed
+ { path: 'movie-list', component: MovieListComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
