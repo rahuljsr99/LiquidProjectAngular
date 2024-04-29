@@ -14,6 +14,8 @@ import { FooterComponent } from './CommonComponents/footer/footer.component';
 import { FeaturedMoviesComponent } from './CommonComponents/featured-movies/featured-movies.component';
 import { QuoteBoxComponent } from './CommonComponents/quote-box/quote-box.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { MovieListComponent } from './movie-list/movie-list.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
