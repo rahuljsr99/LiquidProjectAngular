@@ -20,35 +20,70 @@ constructor(private router: Router){}
   
  
   buyItem() {
-    this.isBuying = true; // Start the buying process
-    this.showSpinner = true; // Show the spinner
-
-    setTimeout(() => {
-      // Simulate a delay (replace this with your actual logic)
-      // Once the buying process is complete, update the button state
-      this.isItemBought = true; // Item is bought
-      this.isBuying = false; // Buying process is complete
-      this.showSpinner = false; // Hide the spinner
-    }, 2000); // Simulate a 2-second buying process
+    if (!this.selectedMovie) {
+      
+      console.log('Please select a movie before buying.');
+      return; 
+    }else{
+      this.isBuying = true; // Start the buying process
+      this.showSpinner = true; // Show the spinner
+  
+      setTimeout(() => {
+        // Simulate a delay (replace this with your actual logic)
+        // Once the buying process is complete, update the button state
+        this.isItemBought = true; // Item is bought
+        this.isBuying = false; // Buying process is complete
+        this.showSpinner = false; // Hide the spinner
+      }, 2000); // Simulate a 2-second buying process
+    }
+   
   }
   printInvoice() {
-    const invoiceContent = this.generateInvoiceContent();
-    this.router.navigate(['/invoice'], { queryParams: { content: invoiceContent } });
+    //const invoiceContent = this.generateInvoiceContent();
+    this.router.navigate(['/invoice'], { queryParams: { 
+      movieTitle:this.selectedMovie, 
+      director:this.getDirectorOfSelectedMovie(),
+       price:this.getPriceOfSelectedMovie(),
+       transactionId:this.generateTransactionId(),
+        date:new Date().toLocaleDateString() } 
+      });
   }
-  generateInvoiceContent(): string {
-    // Generate the invoice content dynamically based on the selected movie, price, etc.
-    return `
-      <h1>Movie Purchase Invoice</h1>
-      <div>
-        <h2>${this.selectedMovie}</h2>
-        <p>Directed by: ${this.getDirectorOfSelectedMovie()}</p>
-        <p>Price: ${this.getPriceOfSelectedMovie()}$</p>
-        <p>Random Tax: ${Math.floor(Math.random() * 10)}%</p>
-        <p>Transaction ID: ${this.transactionId}</p>
-        <p>Date: ${new Date().toLocaleDateString()}</p>
-      </div>
-    `;
-  }
+  // generateInvoiceContent(): string {
+  //   // Generate the invoice content dynamically based on the selected movie, price, etc.
+  //   return `
+    // <h1>Movie Purchase Invoice</h1>
+    // <table class="table">
+    //   <thead class="table-dark">
+    //     <tr>
+    //       <th scope="col">Attribute</th>
+    //       <th scope="col">Value</th>
+    //     </tr>
+    //   </thead>
+    //   <tbody>
+    //     <tr>
+    //       <th scope="row" class="table-secondary">Movie Title</th>
+    //       <td>${this.selectedMovie}</td>
+    //     </tr>
+    //     <tr>
+    //       <th scope="row" class="table-secondary">Directed by</th>
+    //       <td>${this.getDirectorOfSelectedMovie()}</td>
+    //     </tr>
+    //     <tr>
+    //       <th scope="row" class="table-secondary">Price</th>
+    //       <td>&#8377; ${this.getPriceOfSelectedMovie()}</td>
+    //     </tr>
+    //     <tr>
+    //       <th scope="row" class="table-secondary">Transaction ID</th>
+    //       <td>${this.generateTransactionId()}</td>
+    //     </tr>
+    //     <tr>
+    //       <th scope="row" class="table-secondary">Date</th>
+    //       <td>${new Date().toLocaleDateString()}</td>
+    //     </tr>
+    //   </tbody>
+    // </table> 
+  //   `;
+  // }
   resetBuyButton() {
     this.isItemBought = false;
   }
@@ -59,5 +94,15 @@ constructor(private router: Router){}
   getPriceOfSelectedMovie(): number {
     const selectedMovieObj = this.movies.find(movie => movie.title === this.selectedMovie);
     return selectedMovieObj ? selectedMovieObj.price : 0;
+  }
+  generateTransactionId(): string {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const length = 12; // Limit to 12 characters
+    let transactionId = '';
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      transactionId += characters.charAt(randomIndex);
+    }
+    return transactionId;
   }
 }

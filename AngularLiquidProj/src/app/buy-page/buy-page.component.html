@@ -18,11 +18,13 @@
   <select id="movieSelect" [(ngModel)]="selectedMovie" (change)="resetBuyButton()">
     <option *ngFor="let movie of movies" [value]="movie.title">{{ movie.title }}</option>
   </select>
+  <div *ngIf="!selectedMovie" class="error-message">Please select a movie before buying.</div>
             <div *ngIf="selectedMovie">
-                <p>Price: {{ getPriceOfSelectedMovie() }}$</p>
+                <p>Price: &#8377;{{ getPriceOfSelectedMovie() }}</p>
               </div>
           </div>
           <button class="btn"
+          [class.btn-secondary]="!selectedMovie"
           [class.btn-primary]="!isItemBought && !isBuying"
           [class.btn-success]="isItemBought && !isBuying"
           [disabled]="isBuying || isItemBought"
