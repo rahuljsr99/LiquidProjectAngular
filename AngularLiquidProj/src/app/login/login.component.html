@@ -12,10 +12,11 @@
           <label for="pword">Password</label>
           <input type="password" name="Pword" class="form-control" [(ngModel)]="Password"/>
       </div>
+      
+      <span> Admin Login <a routerLink="admin">Admin</a></span>
       <div class="btn-container">
           <div class="error">{{errorMssg}}</div>
           <button class="btn btn-dark" (click)="login()">Login</button>
-          <button class="btn btn-dark">SignUp</button>
       </div>
   </div>
 </div>

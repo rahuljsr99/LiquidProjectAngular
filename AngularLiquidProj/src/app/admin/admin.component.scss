@@ -1,0 +1,29 @@
+.admin-form{
+    width: 500px;
+    height: 300px;
+    padding:20px;
+    background-color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 180px;
+    right: 520px;
+    box-shadow: 5px 5px 20px #b2a1a1;
+}
+.form-group{
+    margin-top: 20px;
+}
+label {
+    font-weight: bold;
+}
+.btn-container{
+    .btn{
+        margin-top: 30px;
+        margin-right: 158px;
+    }
+    .error{
+        position: absolute;
+        top:32px;
+        right:0px;
+        color: red;
+    }
+}

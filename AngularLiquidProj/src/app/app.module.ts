@@ -14,6 +14,7 @@ import { FooterComponent } from './CommonComponents/footer/footer.component';
 import { FeaturedMoviesComponent } from './CommonComponents/featured-movies/featured-movies.component';
 import { QuoteBoxComponent } from './CommonComponents/quote-box/quote-box.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MovieListComponent } from './movie-list/movie-list.component';
     FooterComponent,
     FeaturedMoviesComponent,
     QuoteBoxComponent,
-    MovieListComponent
+    MovieListComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
