@@ -13,8 +13,18 @@ import { ParallaxComponent } from './CommonComponents/parallax/parallax.componen
 import { FooterComponent } from './CommonComponents/footer/footer.component';
 import { FeaturedMoviesComponent } from './CommonComponents/featured-movies/featured-movies.component';
 import { QuoteBoxComponent } from './CommonComponents/quote-box/quote-box.component';
+<<<<<<< HEAD
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { AdminComponent } from './admin/admin.component';
+=======
+import { signupComponent } from './signup/signup.component';
+
+import { BuyPageComponent } from './buy-page/buy-page.component';
+import { InvoiceComponent } from './CommonComponents/invoice/invoice.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
+import { HttpClientModule } from '@angular/common/http';
+
+>>>>>>> 0184806239be1b350750ee425ac938979873b3de
 
 @NgModule({
   declarations: [
@@ -28,13 +38,22 @@ import { AdminComponent } from './admin/admin.component';
     FooterComponent,
     FeaturedMoviesComponent,
     QuoteBoxComponent,
+<<<<<<< HEAD
     MovieListComponent,
     AdminComponent
+=======
+    signupComponent,
+    BuyPageComponent,
+    InvoiceComponent,
+    MovieListComponent
+>>>>>>> 0184806239be1b350750ee425ac938979873b3de
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

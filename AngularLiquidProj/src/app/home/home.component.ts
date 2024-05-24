@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Route, Router } from '@angular/router';import movieDb from './../../assets/JsonDb/MovieDb/sampleMovieDb.json';
 
 @Component({
   selector: 'app-home',
@@ -6,13 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+    @ViewChild('invoice') invoiceElement!: ElementRef;
+    movies: { title: string; director: string; }[] = movieDb;
+  
+    constructor() { }
+    ngOnInit(): void {
+    console.log(this.movies);
+    }
+    
   }
-  getDate(): Date {
-    return new Date('1999-04-19T00:00:00');
-  }
- 
-}
+

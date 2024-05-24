@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
+=======
+<nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+>>>>>>> 0184806239be1b350750ee425ac938979873b3de
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Movies To Watch</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,6 +21,7 @@
 <button type="button" class="btn btn-secondary">Excel</button>
 <button type="button" class="btn btn-secondary">Pdf</button>
 </div>
+<<<<<<< HEAD
 <div class="card-outline">
 <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
     <div class="card-header">Header</div>
@@ -75,3 +80,24 @@
     </div>
   </div>
 </div>
+=======
+<div class="card-container">
+<div *ngFor="let movie of movies">
+  <div class="card text-bg-dark mb-3" style="max-width: 18rem; background-image: url('{{ movie.image }}')">
+    <div class="card-header">{{ movie.name }}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{ movie.summary }}</h5>
+      <p class="card-text">{{ movie.cast }}</p>
+      <div *ngIf="movie.streamingLink">
+        <p class="card-text">Amazon: {{ movie.streamingLink.amazon }}</p>
+        <p class="card-text">Netflix: {{ movie.streamingLink.netflix }}</p>
+      </div>
+      
+    </div>
+  </div>
+  </div>  
+</div>
+  <!-- <h2>{{ movie.name }}</h2>
+  <p>Director: {{ movie.director }}</p>
+  <p>Year: {{ movie.imdbRating }}</p> -->
+>>>>>>> 0184806239be1b350750ee425ac938979873b3de

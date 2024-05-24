@@ -1,0 +1,36 @@
+<div id="print-section">
+    <div>
+    <h1>Movie Purchase Invoice</h1>
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Attribute</th>
+          <th scope="col">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" class="table-secondary">Movie Title</th>
+          <td>{{this.movieTitle}}</td>
+        </tr>
+        <tr>
+          <th scope="row" class="table-secondary">Directed by</th>
+          <td>{{this.director}}</td>
+        </tr>
+        <tr>
+          <th scope="row" class="table-secondary">Price</th>
+          <td>&#8377;{{this.price}}</td>
+        </tr>
+        <tr>
+          <th scope="row" class="table-secondary">Transaction ID</th>
+          <td>{{this.transactionId}}</td>
+        </tr>
+        <tr>
+          <th scope="row" class="table-secondary">Date</th>
+          <td>{{this.date}}</td>
+        </tr>
+      </tbody>
+    </table> 
+</div>
+</div>
+<button (click)="generatePDF()">Download Invoice</button>
