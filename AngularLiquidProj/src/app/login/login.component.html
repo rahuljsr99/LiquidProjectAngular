@@ -1,7 +1,10 @@
 <div class="login-container">
   <img class="film" src="assets/images/film.png" alt=" ">
   <div class="logo">Movies</div>
-  <div class="desc"> people find watching movies both entertaining & way to reduce stress Watching movies can make us forget our problems is an alternative to anxiety loss
+  <div class="desc"> people find watching movies for both entertaining 
+    <br> & way to reduce stress 
+    <br> Watching movies can make us forget our problems 
+    <br> is an alternative to anxiety loss
   </div>   
   <div class="login-form">
       <div class="form-group">
@@ -12,6 +15,7 @@
           <label for="pword">Password</label>
           <input type="password" name="Pword" class="form-control" [(ngModel)]="Password"/>
       </div>
+      <span> Admin Login <a routerLink="admin">Admin</a></span>
       <div class="btn-container">
           <div class="error">{{errorMssg}}</div>
           <button class="btn btn-dark" (click)="login()">Login</button>

@@ -6,6 +6,7 @@ import { signupComponent } from './signup/signup.component';
 import { BuyPageComponent } from './buy-page/buy-page.component';
 import { InvoiceComponent } from './CommonComponents/invoice/invoice.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch:'full' },
@@ -18,7 +19,9 @@ const routes: Routes = [
 
  //{ path: '**', component: LoginComponent }, 
  // Add other routes if needed
- { path: 'movie-list', component: MovieListComponent }
+ { path: 'movie-list', component: MovieListComponent },
+ { path: 'admin', component: AdminComponent},
+ { path: 'login/admin', component: AdminComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

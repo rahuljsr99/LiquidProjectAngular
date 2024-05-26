@@ -19,6 +19,7 @@ import { BuyPageComponent } from './buy-page/buy-page.component';
 import { InvoiceComponent } from './CommonComponents/invoice/invoice.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     signupComponent,
     BuyPageComponent,
     InvoiceComponent,
-    MovieListComponent
+    MovieListComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

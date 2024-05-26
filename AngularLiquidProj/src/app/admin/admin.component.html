@@ -1,0 +1,14 @@
+<div class="admin">
+    <div class="form-group">
+        <label for="uname">Username</label>
+        <input type="text" name="uname" class="form-control" [(ngModel)]="Username"/>
+    </div>
+    <div class="form-group">
+        <label for="pword">Password</label>
+        <input type="password" name="Pword" class="form-control" [(ngModel)]="Password"/>
+    </div>
+    <div class="btn-container">
+        <div class="error">{{errorMssg}}</div>
+        <button class="btn btn-dark" (click)="admin()">Admin</button>
+    </div>
+</div>

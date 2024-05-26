@@ -1,0 +1,31 @@
+.admin{
+    width: 500px;
+    height: 300px;
+    padding:20px;
+    background-color: #b562b5;
+    border-radius: 10px;
+    position: absolute;
+    bottom:350px;
+    right: 520px;
+    left:600px;
+    align-content: center;
+    box-shadow: 5px 5px 20px #b2a1a1;
+}
+.form-group{
+    margin-top: 20px;
+}
+label {
+    font-weight: bold;
+}
+.btn-container{
+    .btn{
+        margin-top: 30px;
+        margin-right: 158px;
+    }
+    .error{
+        position: absolute;
+        top:32px;
+        right:20px;
+        color: rgb(54, 6, 6);
+    }
+}
