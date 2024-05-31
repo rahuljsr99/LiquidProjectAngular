@@ -1,24 +1,79 @@
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
+<app-navigation-bar 
+[pageTitle]="'MovieWizard'"
+[Link1]="'Dashboard'"
+[Link1Route]="'/Admin'"
+[Link2]="'Manage Users'"
+[Link2Route]="'/ManageUsers'"
+[Link3]="'Analytics'"
+[Link3Route]="'#'"
+[Link4]="'Database Management'">
+</app-navigation-bar>
+<div class="card addUserCard">
+  <h5 class="card-header">Add User</h5>
+  <div class="card-body">
+<form class="row g-3" id="userForm" (submit)="onSubmit($event.target)">
+  <div class="col-md-6">
+    <label for="inputName" class="form-label">Name</label>
+    <input type="text" class="form-control" id="inputName" name="UserName" required>
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail" name="Email" required>
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword" class="form-label">Password</label>
+    <input type="password" class="form-control" id="inputPassword" name="Password" required>
+  </div>
+  <div class="col-12">
+    <label for="inputPhoneNumber" class="form-label">Phone Number</label>
+    <input type="tel" class="form-control" id="inputPhoneNumber" name="PhoneNumber" placeholder="Enter your phone number" required>
+  </div>
+  <div class="col-12 mt-3">
+    <label for="fileUpload" class="form-label">Upload profile picture</label>
+    <input type="file" class="form-control" id="fileUpload" accept="image/*" name="ProfilePhoto">
+    <div id="fileError" class="text-danger mt-2" style="display: none;">Please upload a valid image file (jpg, jpeg, png, gif).</div>
+  </div>
+  <div class="col-md-6">
+    <h6>Type</h6>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="userType" id="userTypeUser" value="User" checked>
+      <label class="form-check-label" for="userTypeUser">
+        User
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="userType" id="userTypeAdmin" value="Administrator">
+      <label class="form-check-label" for="userTypeAdmin">
+        Administrator
+      </label>
     </div>
   </div>
+  <div class="col-12">
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="inputActive" name="IsActive" checked>     
+      <label class="form-check-label" for="inputActive" id="switchLabel">Active</label>
+    </div>
+  </div>
+  <div class="col-12">
+    
+    <button 
+      type="submit" 
+      class="btn"
+      [class.btn-secondary]="!isFormValid"
+      [class.btn-primary]="!isUserAdded && !isSubmitting"
+      [class.btn-success]="isUserAdded && !isSubmitting"
+      [disabled]="isSubmitting || isUserAdded">
+      <span *ngIf="isSubmitting && !isUserAdded">
+        Adding <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      </span>
+      <span *ngIf="!isSubmitting && !isUserAdded">
+        Add User
+      </span>
+      <span *ngIf="isUserAdded">
+        User Added
+      </span>
+    </button>
+  </div>
+</form>
+</div>
+</div>

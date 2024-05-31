@@ -7,6 +7,7 @@ import { BuyPageComponent } from './buy-page/buy-page.component';
 import { InvoiceComponent } from './CommonComponents/invoice/invoice.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { UserManagementComponent } from './user-management/user-management.component';
+import { AddUserComponent } from './add-user/add-user.component';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch:'full' },
  { path: 'home', component: HomeComponent }, // Define the route for the homepage
@@ -16,7 +17,8 @@ const routes: Routes = [
  { path: 'buy', component: BuyPageComponent },
  { path: 'invoice', component: InvoiceComponent },
  { path: 'Admin', component: AdminPageComponent},
- { path: 'ManageUsers', component: UserManagementComponent},  
+ { path: 'ManageUsers', component: UserManagementComponent},
+ { path: 'AddUser', component: AddUserComponent }, 
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
