@@ -1,0 +1,65 @@
+<app-navigation-bar 
+[pageTitle]="'Manage Users'"
+[Link1]="'Dashboard'"
+[Link1Route]="'#'"
+[Link2]="'Add User'"
+[Link2Route]="'#'"
+[Link3]="'Manage Permissions'"
+[Link3Route]="'#'"
+[Link4]="'Database Management'">
+</app-navigation-bar>
+<app-analytics-dashboard
+[Item1]="'Total Users'"
+[Count1]="userCount"
+[Item2]="'Administrators'"
+[Count2]="adminCount"
+[Item3]="'Active Users'"
+[Count3]="activeUsersCount"
+[Item4]="'Inactive Users'"
+[Count4]="inactiveUsersCount"
+></app-analytics-dashboard>
+<table class="table table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">User ID</th>
+      <th scope="col">User Name</th>
+      <th scope="col">Password</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Email</th>
+      <th scope="col">Profile Photo</th>
+      <th scope="col">Type</th>
+      <th scope="col">Status</th>
+      <th scope="col">Created By</th>
+      <th scope="col">Created Date</th>
+      <th scope="col">Updated By</th>
+      <th scope="col">Updated Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ user.userId }}</td>
+      <td>{{ user.userName }}</td>
+      <td>{{ user.password }}</td>
+      <td>{{ user.phoneNumber }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.profilePhoto }}</td>
+      <td>
+        <ng-container *ngIf="user.isAdmin">
+          <span class="badge rounded-pill text-bg-primary">Administrator</span>
+        </ng-container>
+      </td>
+      <td> <ng-container *ngIf="user.isActive; else inActive">
+        <span class="badge rounded-pill text-bg-success">Active</span>
+      </ng-container>
+      <ng-template #inActive>
+        <span class="badge rounded-pill text-bg-secondary">Inactive</span>
+      </ng-template></td>
+      <td>{{ user.createdBy }}</td>
+      <td>{{ user.createdDate }}</td>
+      <td>{{ user.updatedBy }}</td>
+      <td>{{ user.updatedDate }}</td>
+    </tr>
+  </tbody>
+</table>
