@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -14,4 +14,9 @@ export class NavigationBarComponent {
   @Input() Link3: string = '';
   @Input() Link3Route: string = '';
   @Input() Link4: string = '';
+  @Output() linkClicked = new EventEmitter<string>();
+
+  onLinkClick(link: string): void {
+    this.linkClicked.emit(link);
+  }
 }
