@@ -1,0 +1,157 @@
+<app-navigation-bar 
+[pageTitle]="'MovieWizard'"
+[Link1]="'User Management'"
+[Link1Route]="'#'"
+[Link2]="'Movie Management'"
+[Link2Route]="'#'"
+[Link3]="'Analytics'"
+[Link3Route]="'#'"
+[Link4]="'Database Management'">
+</app-navigation-bar>
+<app-banner 
+[Title]="'Movie Wizard Administration'"
+[Description]="'Welcome to the Admin Dashboard. Here, you can manage user accounts, oversee site settings, and review system logs. Use the navigation menu to access different administrative functions and configure the application according to your needs. If you encounter any issues, please refer to the help section or contact support'"></app-banner>
+<app-analytics-dashboard
+[Item1]="'Total Users'"
+[Count1]="userCount"
+[Button1]="'Manage Users'"
+[ButtonLink1]="'/ManageUsers'"
+[Item2]="'Total Movies'"
+[Count2]="10"
+[Button2]="'Manage Movies'"
+[ButtonLink2]="'/ManageMovies'"
+[Item3]="'Total Revenue'"
+[Count3]="250"
+[Button3]="'Checkout Revenue'"
+[ButtonLink3]="'/ManageRevenue'"
+[Item4]="'Average Revenue'"
+[Count4]="20"
+[Button4]="'Manage Users'"
+[ButtonLink4]="'/Print Report'"
+></app-analytics-dashboard>
+
+
+
+<!--<h2>User List</h2>
+<p>Total Users : {{userCount}}</p>
+<table class="table table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">User ID</th>
+      <th scope="col">User Name</th>
+      <th scope="col">Password</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Email</th>
+      <th scope="col">Profile Photo</th>
+      <th scope="col">Type</th>
+      <th scope="col">Status</th>
+      <th scope="col">Created By</th>
+      <th scope="col">Created Date</th>
+      <th scope="col">Updated By</th>
+      <th scope="col">Updated Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ user.userId }}</td>
+      <td>{{ user.userName }}</td>
+      <td>{{ user.password }}</td>
+      <td>{{ user.phoneNumber }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.profilePhoto }}</td>
+      <td>
+        <ng-container *ngIf="user.isAdmin">
+          <span class="badge rounded-pill text-bg-primary">Administrator</span>
+        </ng-container>
+      </td>
+      <td> <ng-container *ngIf="user.isActive; else inActive">
+        <span class="badge rounded-pill text-bg-success">Active</span>
+      </ng-container>
+      <ng-template #inActive>
+        <span class="badge rounded-pill text-bg-secondary">Inactive</span>
+      </ng-template></td>
+      <td>{{ user.createdBy }}</td>
+      <td>{{ user.createdDate }}</td>
+      <td>{{ user.updatedBy }}</td>
+      <td>{{ user.updatedDate }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<form class="row g-3" id="userForm" (submit)="onSubmit($event.target)">
+  <div class="col-md-6">
+    <label for="inputName" class="form-label">Name</label>
+    <input type="text" class="form-control" id="inputName" name="UserName" required>
+  </div>
+  <div class="col-md-6">
+    <label for="inputEmail" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail" name="Email" required>
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword" class="form-label">Password</label>
+    <input type="password" class="form-control" id="inputPassword" name="Password" required>
+  </div>
+  <div class="col-12">
+    <label for="inputPhoneNumber" class="form-label">Phone Number</label>
+    <input type="tel" class="form-control" id="inputPhoneNumber" name="PhoneNumber" placeholder="Enter your phone number" required>
+  </div>
+  <div class="col-12 mt-3">
+    <label for="fileUpload" class="form-label">Upload profile picture</label>
+    <input type="file" class="form-control" id="fileUpload" accept="image/*" name="ProfilePhoto">
+    <div id="fileError" class="text-danger mt-2" style="display: none;">Please upload a valid image file (jpg, jpeg, png, gif).</div>
+  </div>
+  <div class="col-md-6">
+    <h6>Type</h6>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="userType" id="userTypeUser" value="User" checked>
+      <label class="form-check-label" for="userTypeUser">
+        User
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="userType" id="userTypeAdmin" value="Administrator">
+      <label class="form-check-label" for="userTypeAdmin">
+        Administrator
+      </label>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="inputActive" name="IsActive" checked>     
+      <label class="form-check-label" for="inputActive" id="switchLabel">Active</label>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Add User</button>
+  </div>
+</form>-->
+
+<!--<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add event listener for switch input
+    document.getElementById('flexSwitchCheckChecked').addEventListener('change', function(event) {
+      const isChecked = event.target.checked;
+      const switchLabel = document.getElementById('switchLabel');
+      
+      switchLabel.textContent = isChecked ? 'Active' : 'Inactive';
+    });
+
+    // Add event listener for file upload input
+    document.getElementById('fileUpload').addEventListener('change', function(event) {
+      const fileInput = event.target;
+      const file = fileInput.files[0];
+      const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+      const errorDiv = document.getElementById('fileError');
+
+      if (file && !allowedTypes.includes(file.type)) {
+        errorDiv.style.display = 'block';
+        fileInput.value = ''; // Clear the input
+      } else {  
+        errorDiv.style.display = 'none';
+      }
+    });
+  });
+</script>-->
+
