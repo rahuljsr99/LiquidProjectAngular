@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPrintModule } from 'ngx-print';
 
 // Components
@@ -54,7 +54,8 @@ import { AddUserComponent } from './add-user/add-user.component';
     AppRoutingModule,
     FormsModule,
     NgxPrintModule,
-    HttpClientModule  
+    HttpClientModule,
+    ReactiveFormsModule  
   ],
   providers: [UserService,AddUserService],
   bootstrap: [AppComponent]
