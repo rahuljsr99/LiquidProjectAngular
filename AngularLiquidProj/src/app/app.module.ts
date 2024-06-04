@@ -27,6 +27,7 @@ import { UserService } from './Services/User_service/user.service';
 import { AddUserService } from './Services/AddUser_Service/add-user-service.service';
 import { UserManagementComponent } from './user-management/user-management.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { SearchUserComponent } from './search-user/search-user.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { AddUserComponent } from './add-user/add-user.component';
     AnalyticsDashboardComponent,
     UserManagementComponent,
     AddUserComponent,
+    SearchUserComponent,
    // UserListComponent, // Ensure path is correct
   ],
   imports: [

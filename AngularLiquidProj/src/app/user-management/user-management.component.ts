@@ -35,7 +35,7 @@ export class UserManagementComponent {
     
   }
   // Function to handle form submission
-  onSubmit(formData: any): void {
+  /*onSubmit(formData: any): void {
 
     const userData = {
       UserName: formData.UserName.value,
@@ -62,6 +62,6 @@ export class UserManagementComponent {
           console.error('Error:', error);
         }
       );
-  }
+  }*/
 
 }
