@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-import { NgxPrintModule } from 'ngx-print';
+
 
 // Components
 import { AppComponent } from './app.component';
@@ -21,12 +21,14 @@ import { BuyPageComponent } from './buy-page/buy-page.component';
 import { InvoiceComponent } from './CommonComponents/invoice/invoice.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AnalyticsDashboardComponent } from './CommonComponents/analytics-dashboard/analytics-dashboard.component';
-
+import { UserManagementComponent } from './user-management/user-management.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { ModifyPermissionsComponent } from './modify-permissions/modify-permissions.component';
 // Services
 import { UserService } from './Services/User_service/user.service';
 import { AddUserService } from './Services/AddUser_Service/add-user-service.service';
-import { UserManagementComponent } from './user-management/user-management.component';
-import { AddUserComponent } from './add-user/add-user.component';
+
+
 
 @NgModule({
   declarations: [
@@ -47,13 +49,13 @@ import { AddUserComponent } from './add-user/add-user.component';
     AnalyticsDashboardComponent,
     UserManagementComponent,
     AddUserComponent,
+    ModifyPermissionsComponent,
    // UserListComponent, // Ensure path is correct
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgxPrintModule,
     HttpClientModule  
   ],
   providers: [UserService,AddUserService],

@@ -13,4 +13,3 @@ export class MoviesService {
      return this.http.get<any[]>('assets/movieList.json');
    }
 }
-//'https://jsonplaceholder.typicode.com/users'
