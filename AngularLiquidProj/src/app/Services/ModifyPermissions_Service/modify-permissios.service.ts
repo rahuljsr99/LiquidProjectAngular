@@ -1,13 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
-export interface ModifyPermissionsRequestModel {
-  currentUserId: string;
-  changeRequestUserId: string;
-  permissionChangeRequestType: string;
-  permissionChangeRequestValue: boolean;
-}
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +12,22 @@ export class ModifyPermissiosService {
 
   private apiUrl = 'https://localhost:7177/api/Users/ModifyPermissions';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  modifyPermissions(request: ModifyPermissionsRequestModel): Observable<any> {
-    return this.http.post<any>(this.apiUrl, request);
-}
+  // Function to handle errors
+  private handleError(error: any): Observable<never> {
+    console.error('API Error:', error);
+    return throwError('An error occurred. Please try again later.');
+  }
+
+  // Function to send POST request to API
+  postData(endpoint: string, data: any): Observable<any> {
+    const url = `${this.apiUrl}/${endpoint}`;
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    return this.http.post(url, data, { headers })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
 }

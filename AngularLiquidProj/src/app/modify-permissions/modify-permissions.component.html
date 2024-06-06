@@ -9,28 +9,40 @@
   [Link4]="'Database Management'">
 </app-navigation-bar>
 
-<form (ngSubmit)="submit()">
+<form [formGroup]="permissionsForm" (ngSubmit)="onSubmit()">
   <div class="dropdown">
     <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       Employee Name
     </a>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" (click)="selectedUserId = 'Manjiri'" value="1" name="name">Manjiri</a></li>
-      <li><a class="dropdown-item" (click)="selectedUserId = 'Rahul'">Rahul</a></li>
-      <li><a class="dropdown-item" (click)="selectedUserId = 'Manjit'">Manjit</a></li>
-      <li><a class="dropdown-item" (click)="selectedUserId = 'Krishnendu'">Krishnendu</a></li>
-      <li><a class="dropdown-item" (click)="selectedUserId = 'Priya'">Priya</a></li>
-      <li><a class="dropdown-item" (click)="selectedUserId = 'Pavitra'">Pavitra</a></li>
-      <li><a class="dropdown-item" (click)="selectedUserId = 'Lakshmi'">Lakshmi</a></li>
+      <li><a class="dropdown-item" (click)="permissionsForm.controls['selectedUserId'].setValue('Manjiri')">Manjiri</a></li>
+      <li><a class="dropdown-item" (click)="permissionsForm.controls['selectedUserId'].setValue('Rahul')">Rahul</a></li>
+      <li><a class="dropdown-item" (click)="permissionsForm.controls['selectedUserId'].setValue('Manjit')">Manjit</a></li>
+      <li><a class="dropdown-item" (click)="permissionsForm.controls['selectedUserId'].setValue('Krishnendu')">Krishnendu</a></li>
+      <li><a class="dropdown-item" (click)="permissionsForm.controls['selectedUserId'].setValue('Priya')">Priya</a></li>
+      <li><a class="dropdown-item" (click)="permissionsForm.controls['selectedUserId'].setValue('Pavitra')">Pavitra</a></li>
+      <li><a class="dropdown-item" (click)="permissionsForm.controls['selectedUserId'].setValue('Lakshmi')">Lakshmi</a></li>
     </ul>
   </div>
   <div class="form-check form-switch">
-    <input class="form-check-input" type="checkbox" role="switch" id="adminSwitch" [(ngModel)]="isAdmin" name="isAdmin">
+    <input class="form-check-input" type="checkbox" role="switch" id="adminSwitch" formControlName="isAdmin">
     <label class="form-check-label" for="adminSwitch">Admin</label>
   </div>
   <div class="form-check form-switch">
-    <input class="form-check-input" type="checkbox" role="switch" id="activeSwitch" [(ngModel)]="isActive" name="isActive">
+    <input class="form-check-input" type="checkbox" role="switch" id="activeSwitch" formControlName="isActive">
     <label class="form-check-label" for="activeSwitch">Active</label>
+  </div>
+  <div class="form-group">
+    <label for="permissionChangeRequestType">Permission Change Request Type</label>
+    <input type="text" class="form-control" id="permissionChangeRequestType" formControlName="permissionChangeRequestType">
+  </div>
+  <div class="form-group">
+    <label for="permissionChangeRequestValue">Permission Change Request Value</label>
+    <input type="text" class="form-control" id="permissionChangeRequestValue" formControlName="permissionChangeRequestValue">
+  </div>
+  <div class="form-group">
+    <label for="changeRequestUserId">Change Request User ID</label>
+    <input type="text" class="form-control" id="changeRequestUserId" formControlName="changeRequestUserId">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

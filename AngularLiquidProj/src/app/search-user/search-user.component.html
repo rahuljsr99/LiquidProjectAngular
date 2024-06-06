@@ -1,0 +1,56 @@
+
+<div class="container">
+    <div class="card addUserCard">
+        <h5 class="card-header">Search User</h5>
+        <div class="card-body">
+          <form class="form-inline" [formGroup]="searchUserForm" (ngSubmit)="onSubmit()">
+        <input class="form-control mr-sm-2" formControlName="userId" type="search" placeholder="Search by UserId" aria-label="Search"><br>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      </div>
+      </div>
+</div>
+
+<table class="table table-hover" *ngIf="user">
+  <thead class="table-info">
+    <tr>
+      <th scope="col">User ID</th>
+      <th scope="col">User Name</th>
+      <th scope="col">Password</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Email</th>
+      <th scope="col">Profile Photo</th>
+      <th scope="col">Type</th>
+      <th scope="col">Status</th>
+      <th scope="col">Created By</th>
+      <th scope="col">Created Date</th>
+      <th scope="col">Updated By</th>
+      <th scope="col">Updated Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ user.userId }}</td>
+      <td>{{ user.userName }}</td>
+      <td>{{ user.password }}</td>
+      <td>{{ user.phoneNumber }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.profilePhoto }}</td>
+      <td>
+        <span *ngIf="user.isAdmin" class="badge rounded-pill text-bg-primary">Administrator</span>
+      </td>
+      <td>
+        <ng-container *ngIf="user.isActive; else inActive">
+          <span class="badge rounded-pill text-bg-success">Active</span>
+        </ng-container>
+        <ng-template #inActive>
+          <span class="badge rounded-pill text-bg-secondary">Inactive</span>
+        </ng-template>
+      </td>
+      <td>{{ user.createdBy }}</td>
+      <td>{{ user.createdDate }}</td>
+      <td>{{ user.updatedBy }}</td>
+      <td>{{ user.updatedDate }}</td>
+    </tr>
+  </tbody>
+</table>

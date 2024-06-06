@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPrintModule } from 'ngx-print';
 
 // Components
 import { AppComponent } from './app.component';
@@ -27,8 +27,7 @@ import { ModifyPermissionsComponent } from './modify-permissions/modify-permissi
 // Services
 import { UserService } from './Services/User_service/user.service';
 import { AddUserService } from './Services/AddUser_Service/add-user-service.service';
-
-
+import { SearchUserComponent } from './search-user/search-user.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +48,7 @@ import { AddUserService } from './Services/AddUser_Service/add-user-service.serv
     AnalyticsDashboardComponent,
     UserManagementComponent,
     AddUserComponent,
+    SearchUserComponent,
     ModifyPermissionsComponent,
    // UserListComponent, // Ensure path is correct
   ],
@@ -56,7 +56,9 @@ import { AddUserService } from './Services/AddUser_Service/add-user-service.serv
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule  
+    NgxPrintModule,
+    HttpClientModule,
+    ReactiveFormsModule  
   ],
   providers: [UserService,AddUserService],
   bootstrap: [AppComponent]
