@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class ModifyPermissiosService {
 
-  private apiUrl = 'https://localhost:7177/api/Users/ModifyPermissions';
+  private apiUrl = 'https://localhost:7177/api/Users';
 
   constructor(private http: HttpClient) {}
 

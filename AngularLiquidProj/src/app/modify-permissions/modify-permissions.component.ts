@@ -61,7 +61,7 @@ export class ModifyPermissionsComponent {
 
     this.isSubmitting = true;
 
-    this.permissionsService.postData('AddUser', PermissionData).subscribe(
+    this.permissionsService.postData('ModifyPermissions', PermissionData).subscribe(
       response => {
       console.log('Response:', response);
         this.isUserAdded = true;
