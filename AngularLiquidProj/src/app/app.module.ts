@@ -28,7 +28,7 @@ import { ModifyPermissionsComponent } from './modify-permissions/modify-permissi
 import { UserService } from './Services/User_service/user.service';
 import { AddUserService } from './Services/AddUser_Service/add-user-service.service';
 import { SearchUserComponent } from './search-user/search-user.component';
-
+import { CountUpModule } from 'ngx-countup';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +58,8 @@ import { SearchUserComponent } from './search-user/search-user.component';
     FormsModule,
     NgxPrintModule,
     HttpClientModule,
-    ReactiveFormsModule  
+    ReactiveFormsModule ,
+    CountUpModule 
   ],
   providers: [UserService,AddUserService],
   bootstrap: [AppComponent]

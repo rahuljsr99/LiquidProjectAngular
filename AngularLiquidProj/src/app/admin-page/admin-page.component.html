@@ -11,24 +11,26 @@
 <app-banner 
 [Title]="'Movie Wizard Administration'"
 [Description]="'Welcome to the Admin Dashboard. Here, you can manage user accounts, oversee site settings, and review system logs. Use the navigation menu to access different administrative functions and configure the application according to your needs. If you encounter any issues, please refer to the help section or contact support'"></app-banner>
-<app-analytics-dashboard
-[Item1]="'Total Users'"
-[Count1]="userCount"
-[Button1]="'Manage Users'"
-[ButtonLink1]="'/ManageUsers'"
-[Item2]="'Total Movies'"
-[Count2]="10"
-[Button2]="'Manage Movies'"
-[ButtonLink2]="'/ManageMovies'"
-[Item3]="'Total Revenue'"
-[Count3]="250"
-[Button3]="'Checkout Revenue'"
-[ButtonLink3]="'/ManageRevenue'"
-[Item4]="'Average Revenue'"
-[Count4]="20"
-[Button4]="'Manage Users'"
-[ButtonLink4]="'/Print Report'"
-></app-analytics-dashboard>
+<ng-container *ngIf="userCount !== null">
+  <app-analytics-dashboard
+    [Item1]="'Total Users'"
+    [Count1]="userCount"
+    [Button1]="'Manage Users'"
+    [ButtonLink1]="'/ManageUsers'"
+    [Item2]="'Total Movies'"
+    [Count2]="10"
+    [Button2]="'Manage Movies'"
+    [ButtonLink2]="'/ManageMovies'"
+    [Item3]="'Total Revenue'"
+    [Count3]="250"
+    [Button3]="'Checkout Revenue'"
+    [ButtonLink3]="'/ManageRevenue'"
+    [Item4]="'Average Revenue'"
+    [Count4]="20"
+    [Button4]="'Manage Users'"
+    [ButtonLink4]="'/Print Report'"
+  ></app-analytics-dashboard>
+</ng-container>
 
 
 

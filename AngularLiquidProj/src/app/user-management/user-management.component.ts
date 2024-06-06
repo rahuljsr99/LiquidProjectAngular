@@ -1,6 +1,5 @@
 
 import { Component, OnInit } from '@angular/core';
-import { AddUserService} from '../Services/AddUser_Service/add-user-service.service'
 import { UserService } from '../Services/User_service/user.service';
 
 @Component({
@@ -10,11 +9,11 @@ import { UserService } from '../Services/User_service/user.service';
 })
 export class UserManagementComponent {
   users: any[] = [];
-  userCount: number = 0;
-  adminCount: number = 0;
-  activeUsersCount: number = 0;
-  inactiveUsersCount: number = 0;
-  constructor(private userService: UserService, private addUserService: AddUserService) {}
+  userCount: number | null = null;
+  adminCount: number | null = null;
+  activeUsersCount: number | null = null;
+  inactiveUsersCount: number | null = null;
+  constructor(private userService: UserService) {}
   ngOnInit(): void {
     console.log('Calling user service now');
     this.userService.getAllUsers().subscribe(
