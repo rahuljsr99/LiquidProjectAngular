@@ -7,9 +7,9 @@ import { UserService } from '../Services/User_service/user.service';
   templateUrl: './admin-page.component.html',
   styleUrls: ['./admin-page.component.scss']
 })
-export class AdminPageComponent {
+export class AdminPageComponent implements OnInit  {
   users: any[] = [];
-  userCount: number = 0;
+  userCount: number | null = null; 
   constructor(private userService: UserService) {}
   ngOnInit(): void {
     console.log('Calling user service now');
@@ -17,6 +17,7 @@ export class AdminPageComponent {
       (data) => {
         this.users = data;
         this.userCount = this.users.length;
+        console.log(this.users.length);
       },
       (error) => {
         console.error('Error fetching users', error);

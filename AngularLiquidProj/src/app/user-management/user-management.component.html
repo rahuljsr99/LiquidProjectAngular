@@ -8,7 +8,8 @@
 [Link3Route]="'#'"
 [Link4]="'Database Management'">
 </app-navigation-bar>
-<app-analytics-dashboard
+<ng-container *ngIf="userCount!=null && adminCount!=null && activeUsersCount!=null && inactiveUsersCount!=null && activeUsersCount!=null">
+  <app-analytics-dashboard
 [Item1]="'Total Users'"
 [Count1]="userCount"
 [Item2]="'Administrators'"
@@ -18,6 +19,8 @@
 [Item4]="'Inactive Users'"
 [Count4]="inactiveUsersCount"
 ></app-analytics-dashboard>
+</ng-container>
+
 <app-search-user>
 </app-search-user>
 <table class="table table-hover">

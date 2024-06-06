@@ -28,7 +28,7 @@ import { AddUserService } from './Services/AddUser_Service/add-user-service.serv
 import { UserManagementComponent } from './user-management/user-management.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { SearchUserComponent } from './search-user/search-user.component';
-
+import { CountUpModule } from 'ngx-countup';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +57,8 @@ import { SearchUserComponent } from './search-user/search-user.component';
     FormsModule,
     NgxPrintModule,
     HttpClientModule,
-    ReactiveFormsModule  
+    ReactiveFormsModule ,
+    CountUpModule 
   ],
   providers: [UserService,AddUserService],
   bootstrap: [AppComponent]

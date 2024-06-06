@@ -10,10 +10,10 @@ import { UserService } from '../Services/User_service/user.service';
 })
 export class UserManagementComponent {
   users: any[] = [];
-  userCount: number = 0;
-  adminCount: number = 0;
-  activeUsersCount: number = 0;
-  inactiveUsersCount: number = 0;
+  userCount: number | null = null;
+  adminCount: number | null = null;
+  activeUsersCount: number | null = null;
+  inactiveUsersCount: number | null = null;
   constructor(private userService: UserService, private addUserService: AddUserService) {}
   ngOnInit(): void {
     console.log('Calling user service now');
