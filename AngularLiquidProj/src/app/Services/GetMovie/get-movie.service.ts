@@ -7,10 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class MoviesService {
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
-   getMovies(): Observable<any[]> {
-     return this.http.get<any[]>('assets/movieList.json');
+   getallMovies() {
+     return this.http.get('https://localhost:7177/api/movies/GetAllMovies')
    }
+   
 }
 //'https://jsonplaceholder.typicode.com/users'

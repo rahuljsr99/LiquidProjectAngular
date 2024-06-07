@@ -21,6 +21,7 @@ import { BuyPageComponent } from './buy-page/buy-page.component';
 import { InvoiceComponent } from './CommonComponents/invoice/invoice.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AnalyticsDashboardComponent } from './CommonComponents/analytics-dashboard/analytics-dashboard.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
 
 // Services
 import { UserService } from './Services/User_service/user.service';
@@ -29,7 +30,7 @@ import { UserManagementComponent } from './user-management/user-management.compo
 import { AddUserComponent } from './add-user/add-user.component';
 import { SearchUserComponent } from './search-user/search-user.component';
 import { CountUpModule } from 'ngx-countup';
-@NgModule({
+@NgModule({ 
   declarations: [
     AppComponent,
     HomeComponent,
@@ -49,6 +50,7 @@ import { CountUpModule } from 'ngx-countup';
     UserManagementComponent,
     AddUserComponent,
     SearchUserComponent,
+    MovieListComponent
    // UserListComponent, // Ensure path is correct
   ],
   imports: [
