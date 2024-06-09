@@ -1,27 +1,61 @@
-<form #signupForm="ngForm" (ngSubmit)="signup()" novalidate>
+<!-- <form  [formGroup]="SignUpForm" (ngSubmit)="signup()" >
     <div class="form-group">
       <label for="username">Username:</label>
-      <input type="text" id="username" name="username" class="form-control" [(ngModel)]="Username"
-             [(ngModel)]="formData.username" required>
-    </div>
+      <input type="text" id="UserName" formControlName="UserName" class="form-control" required >
+              [(ngModel)]="formData.username" required -->
+    <!-- </div>
     <div class="form-group">
         <label for="Password">Password:</label>
-        <input type="text" id="Password" name="Password" class="form-control" [(ngModel)]="Password"
-               [(ngModel)]="formData.Password" required>
+        <input type="text" id="Password" name="Password" class="form-control" 
+               
+               >
     </div>
     <div class="form-group">
         <label for="emailID">emailID:</label>
-        <input type="text" id="emailID" name="emailID" class="form-control" [(ngModel)]="emailID"
-               [(ngModel)]="formData.emailID" required>
+        <input type="text" id="emailID" name="emailID" class="form-control"
+               >
     </div>
     <div class="form-group">
         <label for="MobileNumber">MobileNumber:</label>
-        <input type="text" id="MobileNumber" name="MobileNumber" class="form-control" [(ngModel)]="MobileNumber"
-               [(ngModel)]="formData.MobileNumber" required>
+        <input type="text" id="MobileNumber" name="MobileNumber" class="form-control" 
+               >
     </div>
     <div class="btn-Container">
-    <div class="error">{{ errorMsg }}</div>
-    <button class= "btn btn-dark" (click) = "signup()">SignUp</button>
+    
+    <button 
+    type="submit" class= "btn btn-dark"  >SignUp</button>
     </div>
-  </form>
-
+  </form> --> 
+  <app-navigation-bar 
+  [pageTitle]="'Sign up'"
+  [Link1]="'login'"
+  [Link1Route]="'/login'"
+  >
+  </app-navigation-bar>
+  <div class="mainbody">
+    <div class="card addUserCard">
+      <h5 class="card-header">Sign Up</h5>
+      <div class="card-body">
+        <form [formGroup]="SignUpForm" (ngSubmit)="signup()" class="row g-3">
+          <div class="col-md-6">
+            <label for="UserName" class="form-label">Name:</label>
+            <input type="text" id="UserName" formControlName="UserName" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label for="Email" class="form-label">Email:</label>
+            <input type="email" id="Email" formControlName="Email" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label for="Password" class="form-label">Password:</label>
+            <input type="password" id="Password" formControlName="Password" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label for="PhoneNumber" class="form-label">Phone Number:</label>
+            <input type="tel" id="PhoneNumber" formControlName="PhoneNumber" class="form-control" required>
+          </div>
+          <button type="submit" class= "btn btn-dark"  >SignUp</button>
+          
+        </form>
+      </div>
+    </div>
+  </div>
