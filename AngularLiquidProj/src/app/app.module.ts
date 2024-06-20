@@ -1,9 +1,17 @@
+//Modules
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPrintModule } from 'ngx-print';
+import { AgGridModule } from 'ag-grid-angular';
 
 // Components
 import { AppComponent } from './app.component';
@@ -29,6 +37,10 @@ import { UserManagementComponent } from './user-management/user-management.compo
 import { AddUserComponent } from './add-user/add-user.component';
 import { SearchUserComponent } from './search-user/search-user.component';
 import { CountUpModule } from 'ngx-countup';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,9 +70,16 @@ import { CountUpModule } from 'ngx-countup';
     NgxPrintModule,
     HttpClientModule,
     ReactiveFormsModule ,
-    CountUpModule 
+    CountUpModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatButtonModule,
+    MatIconModule,
+    MatBadgeModule,
+    AgGridModule,
   ],
-  providers: [UserService,AddUserService],
+  providers: [UserService,AddUserService, provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

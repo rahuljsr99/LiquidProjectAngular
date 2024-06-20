@@ -23,6 +23,13 @@
 
 <app-search-user>
 </app-search-user>
+
+
+
+
+
+<!-- Regular table with pagination -->
+ 
 <table class="table table-hover">
   <thead class="table-dark">
     <tr>
@@ -55,12 +62,14 @@
           <span class="badge rounded-pill text-bg-primary">Administrator</span>
         </ng-container>
       </td>
-      <td> <ng-container *ngIf="user.isActive; else inActive">
-        <span class="badge rounded-pill text-bg-success">Active</span>
-      </ng-container>
-      <ng-template #inActive>
-        <span class="badge rounded-pill text-bg-secondary">Inactive</span>
-      </ng-template></td>
+      <td>
+        <ng-container *ngIf="user.isActive; else inActive">
+          <span class="badge rounded-pill text-bg-success">Active</span>
+        </ng-container>
+        <ng-template #inActive>
+          <span class="badge rounded-pill text-bg-secondary">Inactive</span>
+        </ng-template>
+      </td>
       <td>{{ user.createdBy }}</td>
       <td>{{ user.createdDate }}</td>
       <td>{{ user.updatedBy }}</td>
@@ -68,3 +77,12 @@
     </tr>
   </tbody>
 </table>
+
+<div class="pagination-controls">
+  <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+  <span>Page {{ currentPage }}</span>
+  <button (click)="nextPage()" [disabled]="currentPage * pageSize >= totalRecords">Next</button>
+</div>
+
+
+

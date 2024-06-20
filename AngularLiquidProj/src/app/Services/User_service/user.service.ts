@@ -15,4 +15,7 @@ export class UserService {
   getAllUsers(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
+  getUserCounts(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/GetUserCounts`);
+  }
 }
