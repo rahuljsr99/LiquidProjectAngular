@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class GetPagedUsers {
-  private baseUrl = 'https://localhost:7177/api/Users' 
+  private baseUrl = 'https://localhost:44310/api/Users/GetPagedUsers'; // Updated URL to match API route
 
   constructor(private http: HttpClient) { }
 
   getPagedUsers(pageNumber: number, pageSize: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/GetPagedUsers?pageNumber=${pageNumber}&pageSize=${pageSize}`);
+    return this.http.get(`${this.baseUrl}?pageNumber=${pageNumber}&pageSize=${pageSize}`); // Correct query parameters
   }
 }

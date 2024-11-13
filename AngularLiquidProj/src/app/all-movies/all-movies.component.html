@@ -1,0 +1,54 @@
+<table class="table table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">MovieId</th>
+      <th scope="col">Title</th>
+      <th scope="col">Release Date</th>
+      <th scope="col">Description</th>
+      <th scope="col">Poster</th>
+      <th scope="col">Genres</th>
+      <th scope="col">Budget</th>
+      <th scope="col">Revenue</th>
+      <th scope="col">IMDb Rating</th>
+      <th scope="col">Rotten Tomatoes Rating</th>
+      <th scope="col">Price</th>
+      <th scope="col">IsActive</th>
+      <th scope="col">Created At</th>
+      <th scope="col">Updated At</th>
+      <th scope="col">Created By</th>
+      <th scope="col">Updated By</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of movies; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ movie.movieID }}</td>
+      <td>{{ movie.title }}</td>
+      <td>{{ movie.releaseDate }}</td>
+      <td>{{ movie.description }}</td>
+      <td>
+        <img [src]="movie.poster" alt="{{ movie.title }} poster" *ngIf="movie.poster; else noPoster" style="width: 50px;">
+        <ng-template #noPoster>N/A</ng-template>
+      </td>
+      <td>
+        <span *ngIf="movie.genres && movie.genres.length > 0; else noGenres">{{ movie.genres.join(', ') }}</span>
+        <ng-template #noGenres>N/A</ng-template>
+      </td>
+      <td>{{ movie.budget | currency }}</td>
+      <td>{{ movie.revenue | currency }}</td>
+      <td>{{ movie.imdbRating }}</td>
+      <td>{{ movie.rottenTomatoesRating }}%</td>
+      <td>{{ movie.price | currency }}</td>
+      <td>
+        <span class="badge" [ngClass]="{'text-bg-success': movie.isActive, 'text-bg-secondary': !movie.isActive}">
+          {{ movie.isActive ? 'Active' : 'Inactive' }}
+        </span>
+      </td>
+      <td>{{ movie.createdAt }}</td>
+      <td>{{ movie.updatedAt }}</td>
+      <td>{{ movie.createdBy }}</td>
+      <td>{{ movie.updatedBy }}</td>
+    </tr>
+  </tbody>
+</table>

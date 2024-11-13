@@ -30,12 +30,19 @@ export class UserManagementComponent implements OnInit {
 
   }
 
- 
-     getPagedUsers(page: number): void {
+  getPagedUsers(page: number): void {
+    console.log(`Fetching users for page: ${page}`);
     this.getPagedUserService.getPagedUsers(page, this.pageSize).subscribe(
       (response) => {
-        this.users = response.users;
-        this.totalRecords = response.totalRecords;
+        console.log('Response from API:', response);
+
+        // Accessing userList instead of users
+        if (response && response.userList) {
+          this.users = response.userList;
+          this.totalRecords = response.totalRecords;
+        } else {
+          console.error('No userList found in the response');
+        }
       },
       (error) => {
         console.error('Error fetching users', error);
@@ -43,18 +50,20 @@ export class UserManagementComponent implements OnInit {
     );
   }
 
-   nextPage(): void {
-      if (this.currentPage * this.pageSize < this.totalRecords) {
-        this.currentPage++;
-        this.getPagedUsers(this.currentPage);
-      }
+  // Method to go to the next page
+  nextPage(): void {
+    if (this.currentPage * this.pageSize < this.totalRecords) {
+      this.currentPage++;
+      this.getPagedUsers(this.currentPage);
     }
-  
-    previousPage(): void {
-      if (this.currentPage > 1) {
-        this.currentPage--;
-        this.getPagedUsers(this.currentPage);
-      }
+  }
+
+  // Method to go to the previous page
+  previousPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.getPagedUsers(this.currentPage);
     }
+  }
 
 }
