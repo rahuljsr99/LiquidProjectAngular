@@ -1,3 +1,7 @@
+//Auth
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './Services/interceptors/auth-interceptor.service';
+
 //Modules
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -24,18 +28,19 @@ import { ParallaxComponent } from './CommonComponents/parallax/parallax.componen
 import { FooterComponent } from './CommonComponents/footer/footer.component';
 import { FeaturedMoviesComponent } from './CommonComponents/featured-movies/featured-movies.component';
 import { QuoteBoxComponent } from './CommonComponents/quote-box/quote-box.component';
-import { signupComponent } from './signup/signup.component'; // Ensure correct naming
+import { signupComponent } from './signup/signup.component'; 
 import { BuyPageComponent } from './buy-page/buy-page.component';
 import { InvoiceComponent } from './CommonComponents/invoice/invoice.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AnalyticsDashboardComponent } from './CommonComponents/analytics-dashboard/analytics-dashboard.component';
+import { AllMoviesComponent } from './all-movies/all-movies.component';
+import { UserManagementComponent } from './user-management/user-management.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { SearchUserComponent } from './search-user/search-user.component';
 
 // Services
 import { UserService } from './Services/User_service/user.service';
 import { AddUserService } from './Services/AddUser_Service/add-user-service.service';
-import { UserManagementComponent } from './user-management/user-management.component';
-import { AddUserComponent } from './add-user/add-user.component';
-import { SearchUserComponent } from './search-user/search-user.component';
 import { CountUpModule } from 'ngx-countup';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
@@ -61,6 +66,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     UserManagementComponent,
     AddUserComponent,
     SearchUserComponent,
+    AllMoviesComponent,
    // UserListComponent, // Ensure path is correct
   ],
   imports: [
@@ -79,7 +85,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatBadgeModule,
     AgGridModule,
   ],
-  providers: [UserService,AddUserService, provideAnimationsAsync()],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },UserService,AddUserService, provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

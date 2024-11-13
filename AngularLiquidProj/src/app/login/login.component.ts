@@ -4,7 +4,7 @@ import { Component,OnInit,NgModule } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../Services/Auth_Service/auth.service';
-
+import { AuthenticationService } from '../Services/AuthenticationService/authentication.service';
  
 @Component({
   selector: 'app-login',
@@ -12,7 +12,7 @@ import { AuthService } from '../Services/Auth_Service/auth.service';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent implements OnInit{
-    constructor(private auth: AuthService , private Router: Router, private route:Router){}
+    constructor(private auth: AuthService , private Router: Router, private route:Router, private authentication : AuthenticationService){}
     Username ='';
     Password='';
     errorMssg='';
@@ -34,6 +34,9 @@ login(){
  
     let res =this.auth.checkCredentials(this.Username, this.Password);
     if(res===200){
+      this.authentication.login("testuser", "password").subscribe(response => {
+        this.authentication.storeToken(response.token);
+      })  // Store the token
       this.Router.navigate(['home']);
     }
     if(res===404){
