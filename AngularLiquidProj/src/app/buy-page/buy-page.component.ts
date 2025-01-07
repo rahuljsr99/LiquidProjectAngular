@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Route, Router,ActivatedRoute } from '@angular/router';
 import movieDb from './../../assets/JsonDb/MovieDb/sampleMovieDb.json';
 
 @Component({
@@ -9,18 +9,31 @@ import movieDb from './../../assets/JsonDb/MovieDb/sampleMovieDb.json';
 })
 export class BuyPageComponent {
 // Reference to the invoice content element
-constructor(private router: Router){}
+constructor(private router: ActivatedRoute, private router2: Router){}
   movies: { title: string; director: string; price: number }[] =movieDb; 
-  selectedMovie: string = '';
+  selectedMovie:any = {};
   isItemBought: boolean = false;
   isBuying: boolean = false;
   showSpinner: boolean = false;
   transactionId: string = '';  
   invoiceContent: string = '';
   
- 
+ ngOnInit() : void{
+      // Retrieve the movie data passed as query parameters
+  this.router.queryParams.subscribe(params => {
+    this.selectedMovie = {
+      title: params['title'],
+      director: params['director'],
+      price: params['price'],
+      imdbRating: params['imdbRating'],
+      description: params['description'],
+      genre: params['genre'],
+      releaseDate: params['releaseDate']
+    }})
+ }
+
   buyItem() {
-    if (!this.selectedMovie) {
+    if (!this.selectedMovie.title) {
       
       console.log('Please select a movie before buying.');
       return; 
@@ -40,8 +53,8 @@ constructor(private router: Router){}
   }
   printInvoice() {
     //const invoiceContent = this.generateInvoiceContent();
-    this.router.navigate(['/invoice'], { queryParams: { 
-      movieTitle:this.selectedMovie, 
+    this.router2.navigate(['/invoice'], { queryParams: { 
+      movieTitle:this.selectedMovie.title, 
       director:this.getDirectorOfSelectedMovie(),
        price:this.getPriceOfSelectedMovie(),
        transactionId:this.generateTransactionId(),
@@ -88,11 +101,11 @@ constructor(private router: Router){}
     this.isItemBought = false;
   }
   getDirectorOfSelectedMovie():string{
-    const selectedMovieObj = this.movies.find(movie => movie.title === this.selectedMovie);
+    const selectedMovieObj = this.selectedMovie;
     return selectedMovieObj ? selectedMovieObj.director : "";
   }
   getPriceOfSelectedMovie(): number {
-    const selectedMovieObj = this.movies.find(movie => movie.title === this.selectedMovie);
+    const selectedMovieObj = this.selectedMovie;
     return selectedMovieObj ? selectedMovieObj.price : 0;
   }
   generateTransactionId(): string {

@@ -43,6 +43,8 @@ import { UserService } from './Services/User_service/user.service';
 import { AddUserService } from './Services/AddUser_Service/add-user-service.service';
 import { CountUpModule } from 'ngx-countup';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MovieGridComponent } from './movie-grid/movie-grid.component';
+import { MovieCardComponent } from './CommonComponents/movie-card/movie-card.component';
 
 
 
@@ -67,6 +69,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     AddUserComponent,
     SearchUserComponent,
     AllMoviesComponent,
+    MovieGridComponent,
+    MovieCardComponent,
    // UserListComponent, // Ensure path is correct
   ],
   imports: [

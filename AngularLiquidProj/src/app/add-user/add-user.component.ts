@@ -3,6 +3,7 @@ import { AddUserService} from '../Services/AddUser_Service/add-user-service.serv
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 import { Toast } from 'bootstrap';
+import { CountryService} from '../Services/Countries_Service/country.service'
 
 
 @Component({
@@ -10,14 +11,17 @@ import { Toast } from 'bootstrap';
   templateUrl: './add-user.component.html',
   styleUrl: './add-user.component.scss'
 })
+
 export class AddUserComponent { 
   isUserAdded: boolean = false;
   isSubmitting: boolean = false;
   isFormValid: boolean = true;
   userForm: FormGroup;
+  countries: any[] = [];
 
   constructor(
     private addUserService: AddUserService,
+    private countryService : CountryService,
     private fb: FormBuilder
   ) {
     this.userForm = this.fb.group({
@@ -26,7 +30,9 @@ export class AddUserComponent {
       PhoneNumber: [''],
       Email: [''],
       userType: ['User'],
-      IsActive: [true]
+      IsActive: [true],
+      Nationality: ['', Validators.required],
+      BirthDate : [''],
     });
 
     // Listen to form changes and debounce them
@@ -38,6 +44,15 @@ export class AddUserComponent {
     });
   }
   ngOnInit() {
+    //Initialize external api for country service
+    this.countryService.getCountries().subscribe((data) => {
+      this.countries = data.map((country) => ({
+        name: country.name.common,  // Name of the country
+        code: country.cca2         // ISO code of the country
+      }));
+    });
+
+
     // Initialize the toast
     const toastEl = document.getElementById('liveToast');
     if (toastEl) {
@@ -47,12 +62,19 @@ export class AddUserComponent {
   }
   onSubmit(): void {
     const formData = this.userForm.value;
+    
+    const role : string = formData.userType == 'Administrator' ? 'Admin' : 'User';
+
+    const age  = this.calculateAge(formData.BirthDate);
     const userData = {
       UserName: formData.UserName,
-      Password: formData.Password,
+      PasswordHash: formData.Password,
       PhoneNumber: formData.PhoneNumber,
       Email: formData.Email,
-      IsAdmin: formData.userType === 'Administrator',
+      Nationality : formData.Nationality,
+      DateOfBirth : formData.DateOfBirth,
+      Age : age,
+      Role : role,
       IsActive: formData.IsActive,
       CreatedBy: 'Admin',
       CreatedDate: new Date().toISOString(),
@@ -66,7 +88,7 @@ export class AddUserComponent {
     }
 
     this.isSubmitting = true;
-
+    console.log("User data to be added - ",userData);
     this.addUserService.postData('AddUser', userData).subscribe(
       response => {
         console.log('Response:', response);
@@ -104,5 +126,18 @@ export class AddUserComponent {
     if (this.isUserAdded) {
       this.isUserAdded = false;
     }
+  }
+
+  calculateAge(birthDate: string) : number {
+    const birthDateObj = new Date(birthDate);
+    const today = new Date();
+    const age = today.getFullYear() - birthDateObj.getFullYear();
+    const month = today.getMonth() - birthDateObj.getMonth();
+
+    // If the current month is before the birth month, subtract 1 from the age
+    if (month < 0 || (month === 0 && today.getDate() < birthDateObj.getDate())) {
+    return age - 1;
+    }
+    return age;
   }
 }

@@ -1,0 +1,21 @@
+<!-- movie-card.component.html -->
+<div class="col-12 col-sm-6 col-md-3 mb-4">
+    <div class="card" style="width: 18rem;">
+      <img [src]="movie.Poster || 'default-poster.jpg'" class="card-img-top" alt="{{ movie.Title }} Poster" />
+      <div class="card-body">
+        <h2 class="card-title">{{movie.title}}</h2>
+        <p class="card-text"><strong>Director:</strong> {{ movie.director || 'Unknown' }}</p>
+        <p class="card-text"><strong>Actors:</strong> {{ movie.actors || 'Not available' }}</p>
+        <p class="card-text"><strong>Description:</strong> {{ movie.description }}</p>
+        <p class="card-text"><strong>Description:</strong> {{ movie.genre }}</p>
+        <p class="card-text"><strong>IMDB Rating:</strong> {{ movie.imdbRating }}</p>
+        <p class="card-text"><strong>Rotten Tomatoes Rating:</strong> {{ movie.rottenTomatoesRating }}%</p>
+        <p class="card-text"><strong>Price:</strong> ${{ movie.price }}</p>
+        <p class="card-text"><strong>Release Date:</strong> {{ movie.releaseDate }}</p>
+
+        <button class="btn btn-success btn-block" (click)="buyMovie(movie)" >Buy and Download this for ${{movie.price}}!</button>
+
+      </div>
+    </div>
+  </div>
+  

@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AddUserService {
-  private apiUrl = 'https://localhost:7177/api/Users'; // Your API base URL
+  private apiUrl = 'https://localhost:44310/api/Users'; // Your API base URL
 
   constructor(private http: HttpClient) {}
 

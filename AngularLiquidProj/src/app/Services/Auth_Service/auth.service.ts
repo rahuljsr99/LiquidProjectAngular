@@ -1,39 +1,17 @@
 import { Injectable } from '@angular/core';
- 
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  cred: Map<string, string>;
- 
- 
-  constructor( ) { this.cred = new Map<string, string>([
-    ['LAKSHMI', 'LAK'],
-    ['PAVITRA', 'PAV'],
-    ['PRIYA', 'PRI'],
-    ['MANJIRI', 'MAN'],
-    ['RAHUL', 'RAH']
-  ])
+
+  private apiUrl : string = "https://localhost:44310/api/Security/ValidateUserAsync";
+  constructor(private http: HttpClient){}
+
+  validateUser(email:string, password:string){
+    return this.http.get(`${this.apiUrl}?email=${email}&password=${password}`);
   }
- 
-  checkCredentials(Username: string,Pword: string){
-   
- 
-    if (this.cred.has(Username)) {
-      if (this.cred.get(Username) === (Pword)){
-          return 200;
-          }
-      else{
-        return 404;
-      }
-  }
-  else {
-    return 404;
-      }
- 
+  
 }
-}
- 
- 
  
  

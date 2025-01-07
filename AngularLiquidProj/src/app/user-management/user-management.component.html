@@ -58,10 +58,10 @@
       <td>{{ user.email }}</td>
       <td>{{ user.profilePhoto }}</td>
       <td>
-        <ng-container *ngIf="user.isAdmin">
+        <ng-container *ngIf="user.role === 'Admin' ">
           <span class="badge rounded-pill text-bg-primary">Administrator</span>
         </ng-container>
-        <ng-container *ngIf="!user.isAdmin">
+        <ng-container *ngIf="user.role === 'User'">
           <span class="badge rounded-pill text-bg-secondary">User</span>
         </ng-container>
       </td>

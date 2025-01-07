@@ -9,6 +9,7 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
 import { UserManagementComponent } from './user-management/user-management.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { AllMoviesComponent } from './all-movies/all-movies.component';
+import { MovieGridComponent } from './movie-grid/movie-grid.component';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch:'full' },
  { path: 'home', component: HomeComponent }, // Define the route for the homepage
@@ -20,6 +21,7 @@ const routes: Routes = [
  { path: 'admin', component: AdminPageComponent},
  { path: 'ManageUsers', component: UserManagementComponent},
  { path: 'AddUser', component: AddUserComponent }, 
+ { path:'Movies', component: MovieGridComponent},
  { path:'AllMovies', component: AllMoviesComponent}
 ];
 @NgModule({
