@@ -33,7 +33,7 @@
         <span *ngIf="!isBuying && !isItemBought">
           Buy Now
         </span>
-        <span *ngIf="isItemBought">
+        <span *ngIf="isItemBought" (ngInit)="generateInvoice()">
           Item Bought
         </span>
       </button>
