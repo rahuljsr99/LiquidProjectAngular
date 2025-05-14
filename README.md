@@ -26,6 +26,9 @@ Screenshots :
 --Add User
 ![image](https://github.com/user-attachments/assets/c19a3e7f-2e4b-414a-9a60-1351e410b829)
 
+--Revenue page
+![image](https://github.com/user-attachments/assets/c4197c78-89eb-40c5-a89c-b919cc3019d7)
+
 
 Before ng serve
 1. npm install
