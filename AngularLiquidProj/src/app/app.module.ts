@@ -1,7 +1,7 @@
 //Auth
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './Services/interceptors/auth-interceptor.service';
-
+import { CommonModule } from '@angular/common';
 //Modules
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPrintModule } from 'ngx-print';
 import { AgGridModule } from 'ag-grid-angular';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 // Components
 import { AppComponent } from './app.component';
@@ -45,6 +46,8 @@ import { CountUpModule } from 'ngx-countup';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MovieGridComponent } from './movie-grid/movie-grid.component';
 import { MovieCardComponent } from './CommonComponents/movie-card/movie-card.component';
+import { RevenuePageComponent } from './revenue-page/revenue-page/revenue-page.component';
+
 
 
 
@@ -71,6 +74,7 @@ import { MovieCardComponent } from './CommonComponents/movie-card/movie-card.com
     AllMoviesComponent,
     MovieGridComponent,
     MovieCardComponent,
+    RevenuePageComponent
    // UserListComponent, // Ensure path is correct
   ],
   imports: [
@@ -88,6 +92,8 @@ import { MovieCardComponent } from './CommonComponents/movie-card/movie-card.com
     MatIconModule,
     MatBadgeModule,
     AgGridModule,
+    CommonModule,
+    NgxChartsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },UserService,AddUserService, provideAnimationsAsync()],
   bootstrap: [AppComponent]
