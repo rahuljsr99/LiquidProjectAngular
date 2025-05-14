@@ -11,7 +11,8 @@ Screenshots :
 ![image](https://github.com/user-attachments/assets/ac74f2cf-7b5e-4176-aae6-43f299c48a23)
 
 --Movie page (Development in progress)
-![image](https://github.com/user-attachments/assets/adb378a7-47f3-4f00-8cef-1b5469b0c631)
+![image](https://github.com/user-attachments/assets/baa503b4-e218-4ccb-8433-00f1a9655bc8)
+
 
 --Invoice page 
 ![image](https://github.com/user-attachments/assets/330e5a72-5f35-4baa-badf-be488bab1e1b)
