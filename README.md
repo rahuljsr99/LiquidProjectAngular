@@ -7,8 +7,9 @@ Screenshots :
 ![image](https://github.com/user-attachments/assets/9a27c8db-2f40-46eb-bcbb-d6f3a304f00a)
 ![image](https://github.com/user-attachments/assets/d76e8c3f-8bc6-4511-8408-bba416e9f1f3)
 
---Buy page
-![image](https://github.com/user-attachments/assets/ac74f2cf-7b5e-4176-aae6-43f299c48a23)
+--Buy page 
+![image](https://github.com/user-attachments/assets/62dcf243-5b82-435e-9a7b-164d1b8b6ca4)
+
 
 --Movie page (Development in progress)
 ![image](https://github.com/user-attachments/assets/baa503b4-e218-4ccb-8433-00f1a9655bc8)
