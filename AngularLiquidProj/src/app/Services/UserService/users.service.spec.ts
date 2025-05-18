@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GetPagedUsersService } from './get-paged-users.service';
+import { UsersService } from './users.service';
 
 describe('GetPagedUsersService', () => {
-  let service: GetPagedUsersService;
+  let service: UsersService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(GetPagedUsersService);
+    service = TestBed.inject(UsersService);
   });
 
   it('should be created', () => {

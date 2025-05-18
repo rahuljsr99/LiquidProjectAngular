@@ -1,96 +1,86 @@
 <app-navigation-bar 
-[pageTitle]="'Manage Users'"
-[Link1]="'Dashboard'"
-[Link1Route]="'/Admin'"
-[Link2]="'Add User'"
-[Link2Route]="'/AddUser'"
-[Link3]="'Manage Permissions'"
-[Link3Route]="'#'"
-[Link4]="'Database Management'">
+  [pageTitle]="'Manage Users'"
+  [Link1]="'Dashboard'"
+  [Link1Route]="'/Admin'"
+  [Link2]="'Add User'"
+  [Link2Route]="'/AddUser'"
+  [Link3]="'Manage Permissions'"
+  [Link3Route]="'#'"
+  [Link4]="'Database Management'">
 </app-navigation-bar>
-<ng-container *ngIf="userCount!=null && adminCount!=null && activeUsersCount!=null && inactiveUsersCount!=null && activeUsersCount!=null">
-  <app-analytics-dashboard
-[Item1]="'Total Users'"
-[Count1]="userCount"
-[Item2]="'Administrators'"
-[Count2]="adminCount"
-[Item3]="'Active Users'"
-[Count3]="activeUsersCount"
-[Item4]="'Inactive Users'"
-[Count4]="inactiveUsersCount"
-></app-analytics-dashboard>
-</ng-container>
 
-<app-search-user>
-</app-search-user>
-
-
-
-
-
-<!-- Regular table with pagination -->
- 
-<table class="table table-hover" *ngIf="users.length > 0">
-  <thead class="table-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">User ID</th>
-      <th scope="col">User Name</th>
-      <th scope="col">Password</th>
-      <th scope="col">Phone Number</th>
-      <th scope="col">Email</th>
-      <th scope="col">Profile Photo</th>
-      <th scope="col">Type</th>
-      <th scope="col">Status</th>
-      <th scope="col">Created By</th>
-      <th scope="col">Created Date</th>
-      <th scope="col">Updated By</th>
-      <th scope="col">Updated Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users; let i = index">
-      <th scope="row">{{ i + 1 }}</th>
-      <td>{{ user.userId }}</td>
-      <td>{{ user.username }}</td>
-      <td>{{ user.password }}</td>
-      <td>{{ user.phone }}</td>
-      <td>{{ user.email }}</td>
-      <td>{{ user.profilePhoto }}</td>
-      <td>
-        <ng-container *ngIf="user.role === 'Admin' ">
-          <span class="badge rounded-pill text-bg-primary">Administrator</span>
-        </ng-container>
-        <ng-container *ngIf="user.role === 'User'">
-          <span class="badge rounded-pill text-bg-secondary">User</span>
-        </ng-container>
-      </td>
-      <td>
-        <ng-container *ngIf="user.isActive; else inActive">
-          <span class="badge rounded-pill text-bg-success">Active</span>
-        </ng-container>
-        <ng-template #inActive>
-          <span class="badge rounded-pill text-bg-secondary">Inactive</span>
-        </ng-template>
-      </td>
-      <td>{{ user.createdBy }}</td>
-      <td>{{ user.createdAt | date: 'short' }}</td>
-      <td>{{ user.updatedBy }}</td>
-      <td>{{ user.updatedAt | date: 'short' }}</td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- Message when no users available -->
-<div *ngIf="users.length === 0">
-  <p>No users available</p>
+<div class="container-fluid mt-3 px-4" style="overflow-x: auto;">
+<ag-grid-angular
+    style="width: 100%; height: 500px"
+    class="ag-theme-alpine"
+    [rowData]="visibleUsers"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [rowSelection]="'multiple'"
+    [suppressRowClickSelection]="true"
+    (cellValueChanged)="onCellValueChanged($event)"
+    (gridReady)="onGridReady($event)"
+     (bodyScroll)="onBodyScroll()"
+    (rowValueChanged)="onRowValueChanged($event)"></ag-grid-angular>
 </div>
-
-<div class="pagination-controls">
-  <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
-  <span>Page {{ currentPage }}</span>
-  <button (click)="nextPage()" [disabled]="currentPage * pageSize >= totalRecords">Next</button>
+<div class="container my-4">
+  <div class="row g-3">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+      <div class="card text-center border-dark">
+        <div class="card-body">
+          <h6 class="card-title">Total Records</h6>
+          <h3>{{ totalRecords }}</h3>
+        </div>
+      </div>
+    </div>
+     <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+      <div class="card text-center border-success">
+        <div class="card-body">
+          <h6 class="card-title">Total Users</h6>
+          <h3>{{ userCount }}</h3>
+        </div>
+      </div>
+    </div>
+   <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+      <div class="card text-center border-info">
+        <div class="card-body">
+          <h6 class="card-title">Total Active Users</h6>
+          <h3>{{ activeUsersCount }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+      <div class="card text-center border-warning">
+        <div class="card-body">
+          <h6 class="card-title">Total Administrators</h6>
+          <h3>{{ adminCount }}</h3>
+        </div>
+      </div>
+    </div>
+   <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+      <div class="card text-center border-danger">
+        <div class="card-body">
+          <h6 class="card-title">Total Active Admins</h6>
+          <h3>{{ totalActiveAdminsCount }}</h3>
+        </div>
+      </div>
+    </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+      <div class="card text-center border-secondary">
+        <div class="card-body">
+          <h6 class="card-title">Total Inactive Users</h6>
+          <h3>{{ inactiveUsersCount }}</h3>
+        </div>
+      </div>
+    </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+      <div class="card text-center border-dark">
+        <div class="card-body">
+          <h6 class="card-title">Total Inactive Admins</h6>
+          <h3>{{ inactiveAdminsCount }}</h3>
+        </div>
+      </div>
+    </div>
+    
+  </div>
 </div>
-
-
-
