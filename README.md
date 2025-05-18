@@ -22,7 +22,8 @@ Screenshots :
 ![image](https://github.com/user-attachments/assets/08b67279-f3f2-4af1-b55b-6d12f8f159d9)
 
 --Manage Users
-![image](https://github.com/user-attachments/assets/d891cecd-7d9a-4335-b986-433e0ff10234)
+![image](https://github.com/user-attachments/assets/7fbd379c-af5b-4177-839d-c5a062ff0f68)
+**used AG Grid and cell editing and saving
 
 --Add User
 ![image](https://github.com/user-attachments/assets/c19a3e7f-2e4b-414a-9a60-1351e410b829)
