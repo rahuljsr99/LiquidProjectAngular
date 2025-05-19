@@ -21,23 +21,48 @@
       <p><strong>Price:</strong> ${{ selectedMovie.price }}</p>
       <p><strong>Release Date:</strong> {{ selectedMovie.releaseDate }}</p>
 
-      <button class="btn"
+        <div *ngIf="selectedMovie && !isItemBought" class="upi-section mt-4">
+  <h5>Pay using UPI</h5>
+  
+  <p><strong>UPI ID:</strong> {{ upiId }}</p>
+
+</div>
+<div *ngIf="selectedMovie?.title">
+  <div class="upi-section mt-4">
+    <h5 *ngIf="!isItemBought">Pay using UPI</h5>
+    <p *ngIf="!isItemBought"><strong>UPI ID:</strong> {{ upiId }}</p>
+
+    <div class="d-flex flex-row gap-3 align-items-center">
+
+      <img *ngIf="upiQrCodeUrl && !isItemBought" [src]="upiQrCodeUrl" alt="UPI QR Code" width="120">
+    </div>
+  </div>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <img src="assets/CommonImages/payment/UPI.jpg" class="card-img-top" alt="all payment options">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+  </div>
+  <button class="btn"
         [class.btn-secondary]="!selectedMovie"
         [class.btn-primary]="!isItemBought && !isBuying"
         [class.btn-success]="isItemBought && !isBuying"
         [disabled]="isBuying || isItemBought"
         (click)="buyItem()">
         <span *ngIf="isBuying && !isItemBought">
-          Buying <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          Validating... <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         </span>
         <span *ngIf="!isBuying && !isItemBought">
-          Buy Now
+          I have paid
         </span>
         <span *ngIf="isItemBought" (ngInit)="generateInvoice()">
-          Item Bought
+          Invoice Generated
         </span>
       </button>
       <button class="btn btn-primary" *ngIf="isItemBought" (click)="printInvoice()">Print Invoice</button>
+</div>
+
     </div>
     <div *ngIf="!selectedMovie">
       <p>No movie selected. Please go back and select a movie.</p>

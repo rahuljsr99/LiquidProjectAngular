@@ -1,36 +1,63 @@
-<div id="print-section">
-    <div>
-    <h1>Movie Purchase Invoice</h1>
-    <table class="table">
-      <thead class="table-dark">
-        <tr>
-          <th scope="col">Attribute</th>
-          <th scope="col">Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row" class="table-secondary">Movie Title</th>
-          <td>{{this.movieTitle}}</td>
-        </tr>
-        <tr>
-          <th scope="row" class="table-secondary">Directed by</th>
-          <td>{{this.director}}</td>
-        </tr>
-        <tr>
-          <th scope="row" class="table-secondary">Amount</th>
-          <td>&#8377;{{this.price}}</td>
-        </tr>
-        <tr>
-          <th scope="row" class="table-secondary">Transaction ID</th>
-          <td>{{this.transactionId}}</td>
-        </tr>
-        <tr>
-          <th scope="row" class="table-secondary">Date</th>
-          <td>{{this.date}}</td>
-        </tr>
-      </tbody>
-    </table> 
+<div id="print-section" class="container my-5">
+  <!-- Header Section -->
+  <div class="header text-center mb-4">
+    <img src="assets/CommonImages/Logo/logolight.png" id='logo' alt="MovieWizard Logo" class="mb-3">
+    <h1 class="fw-bold">Movie Purchase Invoice</h1>
+    <p class="text-muted">Thank you for your purchase from MovieWizard!</p>
+  </div>
+
+  <!-- Invoice Details -->
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <table class="table table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Attribute</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="table-light">Movie Title</th>
+            <td>{{this.movieTitle}}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="table-light">Directed by</th>
+            <td>{{this.director}}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="table-light">Amount</th>
+            <td>₹{{this.price.toFixed(2)}}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="table-light">Transaction ID</th>
+            <td>{{this.transactionId}}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="table-light">Date</th>
+            <td>{{this.date}}</td>
+          </tr>
+          <tr>
+            <th scope="row" class="table-light">Invoice Number</th>
+            <td>{{this.invoiceNumber}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>  <!-- Gratitude Section -->
+  <div class="gratitude text-center mt-4">
+    <p class="text-muted">We are grateful for your trust in MovieWizard. This invoice system was created by</p>
+    <p class="fw-bold mb-0">RAHUL KUMAR</p>
+    <p class="text-muted small">Full-Stack Developer</p>
+  </div>
+
+  <!-- Footer Section -->
+  <div class="footer text-center mt-4">
+    <p class="text-muted mb-1">MovieWizard | Contact Us: support&#64;moviewizard.com | +91 123-456-7890</p>
+    <p class="text-muted">We hope you enjoy your movie! Visit us again at www.moviewizard.com</p>
+  </div>
 </div>
+<div class="container">
+  <button type="button" class="btn btn-success btn-lg w-100 mt-3" (click)="generatePDF()">Download Invoice</button>
 </div>
-<button (click)="generatePDF()">Download Invoice</button>
+

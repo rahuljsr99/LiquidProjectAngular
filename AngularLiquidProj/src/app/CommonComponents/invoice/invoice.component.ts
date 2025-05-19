@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { jsPDF } from 'jspdf';
-import 'jspdf-autotable';
+import html2pdf from 'html2pdf.js';
 
 @Component({
   selector: 'app-invoice',
@@ -11,53 +10,36 @@ import 'jspdf-autotable';
 export class InvoiceComponent implements OnInit {
   movieTitle: string = '';
   director: string = '';
-  price: number = 0; // Changed price type to number for calculation
+  price: number = 0;
   transactionId: string = '';
-  date: string = ''; 
+  date: string = '';
   invoiceNumber: number = 0;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    console.log("Invoice component initialized");
-
-    this.route.queryParams.subscribe(params => { console.log(params['date'])});
-
     this.route.queryParams.subscribe(params => {
       this.movieTitle = params['movieTitle'];
       this.director = params['director'];
-      this.price = parseFloat(params['price']); 
+      this.price = parseFloat(params['price']);
       this.transactionId = params['transactionId'];
       this.date = params['createdOn'];
       this.invoiceNumber = params['invoiceNumber'];
     });
-    console.log( this.movieTitle, this.date );
   }
 
-
-  // Function to generate the PDF
   generatePDF() {
-    const doc = new jsPDF();
-    doc.setFont('Arial'); // Set the font to Arial
-    doc.setFontSize(12); // Set the font size
-    doc.text('Movie Purchase Invoice', 10, 10);
+    const element = document.getElementById('print-section');
+    const opt = {
+      margin: 0.5,
+      filename: 'invoice.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
 
-    // Add table content
-    const data = [
-      ['Movie Title', this.movieTitle],
-      ['Directed by', this.director],
-      ['Price', 'Rs.' + this.price.toFixed(2)], // Display price with 2 decimal places
-      ['Transaction ID', this.transactionId],
-      ['Date', this.date], 
-      ['Invoice Number', this.invoiceNumber],
-    ];
-
-    (doc as any).autoTable({
-      head: [['Attribute', 'Value']],
-      body: data
-    });
-
-    // Save or open the PDF
-    doc.save('invoice.pdf');
+    if (element) {
+      html2pdf().set(opt).from(element).save();
+    }
   }
 }

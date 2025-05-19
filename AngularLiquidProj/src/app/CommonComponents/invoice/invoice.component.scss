@@ -42,4 +42,7 @@
       border-bottom-width: 2px;
     }
   }
-  
+.header img {
+  max-width: 120px; /* Reduced from 150px to make the logo smaller */
+  max-height: 120x; /* Ensure the height is proportional */
+}

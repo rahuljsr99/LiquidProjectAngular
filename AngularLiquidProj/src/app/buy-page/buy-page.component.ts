@@ -29,6 +29,8 @@ export class BuyPageComponent implements OnInit {
   showSpinner: boolean = false;
   transactionId: string = '';
   invoiceNumber: number = 0;
+  upiId: string = 'rahulkumar.jsr130299@okhdfcbank';
+  upiQrCodeUrl: string = '';
 
 
   constructor(
@@ -49,7 +51,14 @@ export class BuyPageComponent implements OnInit {
         releaseDate: params['releaseDate']
       };
     });
+    this.upiQrCodeUrl = this.generateUpiQrCode(this.upiId, this.selectedMovie.title, this.selectedMovie.price);
+
   }
+
+  generateUpiQrCode(upiId: string, note: string, amount: number): string {
+  const upiUrl = `upi://pay?pa=${upiId}&pn=MoviePurchase&tn=${note}&am=${amount}&cu=INR`;
+  return `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(upiUrl)}&size=150x150`;
+}
 
   buyItem() {
     if (!this.selectedMovie.title) {
