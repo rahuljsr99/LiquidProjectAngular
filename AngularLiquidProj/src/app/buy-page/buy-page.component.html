@@ -12,58 +12,57 @@
 <div class="card">
   <h3 class="card-header">You're buying {{ selectedMovie.title }}</h3>
   <div class="card-body">
-    <div *ngIf="selectedMovie">
-      <h1>{{ selectedMovie.title }}</h1>
-      <p><strong>Director:</strong> {{ selectedMovie.director }}</p>
-      <p><strong>Description:</strong> {{ selectedMovie.description }}</p>
-      <p><strong>Genre:</strong> {{ selectedMovie.genre }}</p>
-      <p><strong>IMDB Rating:</strong> {{ selectedMovie.imdbRating }}</p>
-      <p><strong>Price:</strong> ${{ selectedMovie.price }}</p>
-      <p><strong>Release Date:</strong> {{ selectedMovie.releaseDate }}</p>
+    <div *ngIf="selectedMovie" class="row align-items-start">
+      <!-- First Column: Movie Details -->
+      <div class="col-md-4 mb-4">
+        <h1>{{ selectedMovie.title }}</h1>
+        <p><strong>Director:</strong> {{ selectedMovie.director }}</p>
+        <p><strong>Description:</strong> {{ selectedMovie.description }}</p>
+        <p><strong>Genre:</strong> {{ selectedMovie.genre }}</p>
+        <p><strong>IMDB Rating:</strong> {{ selectedMovie.imdbRating }}</p>
+        <p><strong>Price:</strong> ${{ selectedMovie.price }}</p>
+        <p><strong>Release Date:</strong> {{ selectedMovie.releaseDate }}</p>
+      </div>
 
-        <div *ngIf="selectedMovie && !isItemBought" class="upi-section mt-4">
-  <h5>Pay using UPI</h5>
-  
-  <p><strong>UPI ID:</strong> {{ upiId }}</p>
+      <!-- Second Column: UPI Section -->
+      <div class="col-md-4 mb-4">
+        <div *ngIf="selectedMovie && !isItemBought" class="upi-section">
+          <h5>Pay using UPI</h5>
+          <p><strong>UPI ID:</strong> {{ upiId }}</p>
+          <div class="d-flex flex-row gap-3 align-items-center">
+            <img *ngIf="upiQrCodeUrl && !isItemBought" [src]="upiQrCodeUrl" alt="UPI QR Code" width="120">
+          </div>
+        </div>
+      </div>
 
-</div>
-<div *ngIf="selectedMovie?.title">
-  <div class="upi-section mt-4">
-    <h5 *ngIf="!isItemBought">Pay using UPI</h5>
-    <p *ngIf="!isItemBought"><strong>UPI ID:</strong> {{ upiId }}</p>
-
-    <div class="d-flex flex-row gap-3 align-items-center">
-
-      <img *ngIf="upiQrCodeUrl && !isItemBought" [src]="upiQrCodeUrl" alt="UPI QR Code" width="120">
+      <!-- Third Column: Payment Options Card -->
+      <div class="col-md-4 mb-4">
+        <div class="card payment-card">
+          <img src="assets/CommonImages/payment/UPI.jpg" class="card-img-top" alt="all payment options">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+          </div>
+          <button class="btn"
+                  [class.btn-secondary]="!selectedMovie"
+                  [class.btn-primary]="!isItemBought && !isBuying"
+                  [class.btn-success]="isItemBought && !isBuying"
+                  [disabled]="isBuying || isItemBought"
+                  (click)="buyItem()">
+            <span *ngIf="isBuying && !isItemBought">
+              Validating... <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            </span>
+            <span *ngIf="!isBuying && !isItemBought">
+              I have paid
+            </span>
+            <span *ngIf="isItemBought" (ngInit)="generateInvoice()">
+              Invoice Generated
+            </span>
+          </button>
+          <button class="btn btn-primary mt-2" *ngIf="isItemBought" (click)="printInvoice()">Print Invoice</button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<div class="card" style="width: 18rem;">
-  <img src="assets/CommonImages/payment/UPI.jpg" class="card-img-top" alt="all payment options">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-  </div>
-  <button class="btn"
-        [class.btn-secondary]="!selectedMovie"
-        [class.btn-primary]="!isItemBought && !isBuying"
-        [class.btn-success]="isItemBought && !isBuying"
-        [disabled]="isBuying || isItemBought"
-        (click)="buyItem()">
-        <span *ngIf="isBuying && !isItemBought">
-          Validating... <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-        </span>
-        <span *ngIf="!isBuying && !isItemBought">
-          I have paid
-        </span>
-        <span *ngIf="isItemBought" (ngInit)="generateInvoice()">
-          Invoice Generated
-        </span>
-      </button>
-      <button class="btn btn-primary" *ngIf="isItemBought" (click)="printInvoice()">Print Invoice</button>
-</div>
-
-    </div>
     <div *ngIf="!selectedMovie">
       <p>No movie selected. Please go back and select a movie.</p>
     </div>

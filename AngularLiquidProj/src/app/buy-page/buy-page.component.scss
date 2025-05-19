@@ -1,0 +1,49 @@
+.card {
+  margin: 20px;
+}
+
+.card-header {
+  font-size: 1.5rem;
+}
+
+.card-body h1 {
+  font-size: 1.8rem; /* Reduced slightly to fit better in the column */
+  margin-bottom: 1rem;
+}
+
+.upi-section {
+  margin-bottom: 1rem;
+}
+
+.payment-card {
+  max-width: 100%; /* Allow the card to take the full column width */
+  margin: 0;
+}
+
+.payment-card .card-img-top {
+  height: 80px; /* Reduced height to fit better in the column */
+  object-fit: contain;
+}
+
+.payment-card .btn {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 767px) {
+  .col-md-4 {
+    margin-bottom: 1.5rem;
+  }
+
+  .payment-card {
+    max-width: 100%;
+  }
+
+  .card-body h1 {
+    font-size: 1.5rem;
+  }
+
+  .upi-section img {
+    width: 100px; /* Slightly smaller QR code on mobile */
+  }
+}
