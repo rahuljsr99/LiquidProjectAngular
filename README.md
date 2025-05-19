@@ -20,8 +20,6 @@ Screenshots :
 ![image](https://github.com/user-attachments/assets/baa503b4-e218-4ccb-8433-00f1a9655bc8)
 
 
---Invoice page 
-![image](https://github.com/user-attachments/assets/330e5a72-5f35-4baa-badf-be488bab1e1b)
 
 --Admin Page 
 ![image](https://github.com/user-attachments/assets/08b67279-f3f2-4af1-b55b-6d12f8f159d9)
