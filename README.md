@@ -8,15 +8,18 @@ Screenshots :
 ![image](https://github.com/user-attachments/assets/d76e8c3f-8bc6-4511-8408-bba416e9f1f3)
 
 --Buy page 
-![image](https://github.com/user-attachments/assets/62dcf243-5b82-435e-9a7b-164d1b8b6ca4)
+![image](https://github.com/user-attachments/assets/4f15114e-f1d3-44a7-8ecd-45a0a83a204c)
+![image](https://github.com/user-attachments/assets/8ea2854a-44b5-4e3a-895d-fcaf1886ed1c)
 
+--invoice page 
+![image](https://github.com/user-attachments/assets/8e22232f-0ef1-402c-942f-8dd65906443b)
+![image](https://github.com/user-attachments/assets/c18f843c-7b7f-4a53-b6c7-dc924c05c077)
+![image](https://github.com/user-attachments/assets/da26bc40-500b-47a4-8dd4-2eaab3147234)
 
 --Movie page (Development in progress)
 ![image](https://github.com/user-attachments/assets/baa503b4-e218-4ccb-8433-00f1a9655bc8)
 
 
---Invoice page 
-![image](https://github.com/user-attachments/assets/330e5a72-5f35-4baa-badf-be488bab1e1b)
 
 --Admin Page 
 ![image](https://github.com/user-attachments/assets/08b67279-f3f2-4af1-b55b-6d12f8f159d9)
