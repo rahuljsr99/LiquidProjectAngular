@@ -8,8 +8,10 @@ Screenshots :
 ![image](https://github.com/user-attachments/assets/d76e8c3f-8bc6-4511-8408-bba416e9f1f3)
 
 --Buy page 
-![image](https://github.com/user-attachments/assets/4f15114e-f1d3-44a7-8ecd-45a0a83a204c)
-![image](https://github.com/user-attachments/assets/8ea2854a-44b5-4e3a-895d-fcaf1886ed1c)
+![image](https://github.com/user-attachments/assets/b0a339be-b15c-4675-a1cb-1aa250771307)
+
+![Uploading image.png…]()
+
 
 --invoice page 
 ![image](https://github.com/user-attachments/assets/8e22232f-0ef1-402c-942f-8dd65906443b)
