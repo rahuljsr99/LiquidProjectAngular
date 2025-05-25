@@ -1,6 +1,6 @@
 // movie-grid.component.ts
 import { Component, OnInit } from '@angular/core';
-import { GetMoviesService } from '../Services/GetMoviesService/get-movies-service.service'
+import { MoviesService } from '../Services/GetMoviesService/movies.service'
 
 @Component({
   selector: 'app-movie-grid',
@@ -10,7 +10,7 @@ import { GetMoviesService } from '../Services/GetMoviesService/get-movies-servic
 export class MovieGridComponent implements OnInit {
   movies: any[] = [];  // Array to store movie data
 
-  constructor(private getMmovieService: GetMoviesService) {}
+  constructor(private getMmovieService: MoviesService) {}
 
   ngOnInit(): void {
 

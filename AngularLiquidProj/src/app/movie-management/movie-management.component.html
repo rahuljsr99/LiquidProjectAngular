@@ -1,0 +1,111 @@
+<app-navigation-bar 
+  [pageTitle]="'Manage Movies'"
+  [Link1]="'Dashboard'"
+  [Link1Route]="'/admin'"
+  [Link2]="'Manage Users'"
+  [Link2Route]="'/ManageUsers'"
+  [Link3]="'Manage TV Shows'"
+  [Link3Route]="'#'"
+  [Link4]="'Manage Actors'">
+</app-navigation-bar>
+
+<div class="container-fluid mt-3 px-4" style="overflow-x: auto;">
+  <ag-grid-angular
+    style="width: 100%; height: 500px"
+    class="ag-theme-alpine"
+    [rowData]="movies"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [rowSelection]="'multiple'"
+    [suppressRowClickSelection]="true"
+    (gridReady)="onGridReady($event)">
+  </ag-grid-angular>
+</div>
+
+<div class="container my-4">
+  <div class="row g-3">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="card text-center border-dark bg-dark">
+        <div class="card-body text-white">
+          <h6 class="card-title fs-5">Total Movies</h6>
+          <h3 class="fs-3">{{ totalMovies ?? 'Loading...' }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="card text-center border-success bg-success">
+        <div class="card-body text-white">
+          <h6 class="card-title fs-5">Total Active Movies</h6>
+          <h3 class="fs-3">{{ totalActiveMovies ?? 'Loading...' }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="card text-center border-danger bg-danger">
+        <div class="card-body text-white">
+          <h6 class="card-title fs-5">Total Inactive Movies</h6>
+          <h3 class="fs-3">{{ totalInactiveMovies ?? 'Loading...' }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <!-- Highest and Least Selling Movies Section -->
+   <div class="card text-center">
+  <div class="card-header">
+    Selling metrics
+  </div>
+  <div class="card-body">
+    <div class="row g-4 mb-5">
+    <!-- Highest Selling Movies -->
+    <div class="col-12 col-md-6">
+      <div class="card shadow" style="width: 18rem; margin: 0 auto;">
+        <div class="card-header bg-primary text-white">
+          Highest Selling Movies
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let movie of topFiveHighestSellingMovies">{{ movie }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Least Selling Movies -->
+    <div class="col-12 col-md-6">
+      <div class="card shadow" style="width: 18rem; margin: 0 auto;">
+        <div class="card-header bg-secondary text-white">
+          Least Selling Movies
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let movie of leastFiveSellingMovies">{{ movie }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fallback Messages -->
+  <div *ngIf="topFiveHighestSellingMovies.length === 0 && leastFiveSellingMovies.length === 0" class="text-center mb-5">
+    <div class="alert alert-info">
+      No selling data available for highest or least selling movies.
+    </div>
+  </div>
+  <div *ngIf="topFiveHighestSellingMovies.length === 0 && leastFiveSellingMovies.length !== 0" class="text-center mb-5">
+    <div class="alert alert-info">
+      No highest selling movies available.
+    </div>
+  </div>
+  <div *ngIf="topFiveHighestSellingMovies.length !== 0 && leastFiveSellingMovies.length === 0" class="text-center mb-5">
+    <div class="alert alert-info">
+      No least selling movies available.
+    </div>
+  </div>
+  </div>
+  <div class="card-footer text-muted">
+    Updated just now
+  </div>
+</div>
+ 
+</div>
+<br>
+<br>

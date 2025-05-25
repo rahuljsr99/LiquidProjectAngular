@@ -34,7 +34,6 @@ import { BuyPageComponent } from './buy-page/buy-page.component';
 import { InvoiceComponent } from './CommonComponents/invoice/invoice.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AnalyticsDashboardComponent } from './CommonComponents/analytics-dashboard/analytics-dashboard.component';
-import { AllMoviesComponent } from './all-movies/all-movies.component';
 import { UserManagementComponent } from './user-management/user-management.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { SearchUserComponent } from './search-user/search-user.component';
@@ -47,6 +46,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MovieGridComponent } from './movie-grid/movie-grid.component';
 import { MovieCardComponent } from './CommonComponents/movie-card/movie-card.component';
 import { RevenuePageComponent } from './revenue-page/revenue-page/revenue-page.component';
+import { MovieManagementComponent } from './movie-management/movie-management.component';
 
 
 
@@ -71,10 +71,11 @@ import { RevenuePageComponent } from './revenue-page/revenue-page/revenue-page.c
     UserManagementComponent,
     AddUserComponent,
     SearchUserComponent,
-    AllMoviesComponent,
+  
     MovieGridComponent,
     MovieCardComponent,
-    RevenuePageComponent
+    RevenuePageComponent,
+    MovieManagementComponent
    // UserListComponent, // Ensure path is correct
   ],
   imports: [
