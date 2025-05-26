@@ -105,7 +105,15 @@ export class MovieManagementComponent {
   },
   { field: 'imdbRating', headerName: 'IMDB Rating', editable: true, width: 120 },
   { field: 'rottenTomatoesRating', headerName: 'RT Rating', editable: true, width: 120 },
-  { field: 'price', headerName: 'Price', valueFormatter: (params) => params.value ? `$${params.value.toLocaleString()}` : '', editable: true }
+  { field: 'price', headerName: 'Price', valueFormatter: (params) => params.value ? `$${params.value.toLocaleString()}` : '', editable: true },
+  {
+      field: 'isActive',
+      headerName: 'Status',
+      cellRenderer: (params: any) => 
+        `<span class="badge ${params.value ? 'bg-success' : 'bg-secondary'}">
+          ${params.value ? 'Active' : 'Inactive'}
+        </span>`
+    }
 ];
 
   defaultColDef: ColDef = {
