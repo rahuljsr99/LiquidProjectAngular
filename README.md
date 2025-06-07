@@ -54,4 +54,4 @@ Install Angular Animations (required by Angular Material):
 
 
 npm install @angular/animations
-![image](https://github.com/user-attachments/assets/35bc90c2-0995-4571-b6da-f5bab4cc0acd)
+
