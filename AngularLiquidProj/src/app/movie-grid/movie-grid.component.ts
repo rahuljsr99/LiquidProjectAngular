@@ -1,6 +1,5 @@
-// movie-grid.component.ts
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../Services/GetMoviesService/movies.service'
+import { MoviesService } from '../Services/GetMoviesService/movies.service';
 
 @Component({
   selector: 'app-movie-grid',
@@ -9,13 +8,38 @@ import { MoviesService } from '../Services/GetMoviesService/movies.service'
 })
 export class MovieGridComponent implements OnInit {
   movies: any[] = [];  // Array to store movie data
-
-  constructor(private getMmovieService: MoviesService) {}
+  filteredMovies: any[] = [];  // Array to store filtered movie data
+  searchTerm: string = "";  // Store the search term
+  originalMovies: any[] = [];  // Store the original movie data
+  displayAllMovies: boolean = true;
+  displaySearchedMovies : boolean = false;
+  constructor(private getMovieService: MoviesService) {}
 
   ngOnInit(): void {
-
-    this.getMmovieService.getAllMovies().subscribe((response:any) => {
-      this.movies = response;  
+    this.getMovieService.searchAndGetMovies(this.searchTerm).subscribe((response: any) => {
+      this.movies = response;
+      this.originalMovies = [...response];  // Keep a copy of the original data
     });
   }
+
+  // Function to handle search input
+  onSearch(event: Event): void {
+    this.displayAllMovies = false;
+    const inputElement = event.target as HTMLInputElement;
+    this.searchTerm = inputElement.value.toLowerCase();
+    this.getMovieService.searchAndGetMovies(this.searchTerm.toLowerCase()).subscribe((response: any) => {
+    this.filteredMovies = response;
+    console.log("filtered Movies ->", this.filteredMovies)
+      if(this.filteredMovies != null){
+        this.showSearchedMovies();
+      }
+      else{
+        this.displayAllMovies = true;
+      }
+    });
+  }
+  showSearchedMovies(){
+    this.displaySearchedMovies = true;
+  }
+ 
 }

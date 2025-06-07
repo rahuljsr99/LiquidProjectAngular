@@ -1,3 +1,103 @@
-.totalAnalytics{
-background-color: antiquewhite;
-}
+.container {
+    display: flex;
+  }
+  .sidebar {
+    width: 250px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-right: 1px solid #e0e0e0;
+  }
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  .sidebar li {
+    margin-bottom: 10px;
+  }
+  .sidebar a {
+    text-decoration: none;
+    color: #333;
+  }
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .period-selector {
+    float: right;
+    padding: 5px;
+  }
+  .analytics-dashboard {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .metric-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+  }
+  .metric-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .metric-header i {
+    font-size: 20px;
+    color: #666;
+  }
+  .metric-card p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  .trend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 14px;
+    margin: 10px 0;
+  }
+  .trend.positive {
+    color: #4caf50;
+  }
+  .trend.negative {
+    color: #f44336;
+  }
+  .trend i {
+    font-size: 12px;
+  }
+  .metric-card button {
+    margin-top: 10px;
+  }
+  .table-filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  .progress-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .progress-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .progress {
+    width: 60%;
+    height: 10px;
+  }

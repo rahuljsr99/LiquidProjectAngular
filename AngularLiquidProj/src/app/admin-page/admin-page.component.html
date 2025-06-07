@@ -1,113 +1,104 @@
 <app-navigation-bar 
-[pageTitle]="'MovieWizard'"
-[Link1]="'User Management'"
-[Link1Route]="'/ManageUsers'"
-[Link2]="'Movie Management'"
-[Link2Route]="'/AllMovies'"
-[Link3]="'Analytics'"
-[Link3Route]="'#'"
-[Link4]="'Database Management'">
+  [pageTitle]="'MovieWizard'"
+  [Link1]="'User Management'"
+  [Link1Route]="'/ManageUsers'"
+  [Link2]="'Movie Management'"
+  [Link2Route]="'/AllMovies'"
+  [Link3]="'Analytics'"
+  [Link3Route]="'#'"
+  [Link4]="'Database Management'">
 </app-navigation-bar>
-<app-banner 
-[Title]="'Movie Wizard Administration'"
-[Description]="'Welcome to the Admin Dashboard. Here, you can manage user accounts, oversee site settings, and review system logs. Use the navigation menu to access different administrative functions and configure the application according to your needs. If you encounter any issues, please refer to the help section or contact support'"></app-banner>
-<ng-container *ngIf="userCount !== null">
-  <app-analytics-dashboard
-    [Item1]="'Total Users'"
-    [Count1]="userCount"
-    [Button1]="'Manage Users'"
-    [ButtonLink1]="'/ManageUsers'"
-    [Item2]="'Total Movies'"
-    [Count2]="10"
-    [Button2]="'Manage Movies'"
-    [ButtonLink2]="'/ManageMovies'"
-    [Item3]="'Total Revenue'"
-    [Count3]="250"
-    [Button3]="'Checkout Revenue'"
-    [ButtonLink3]="'/RevenuePage'"
-    [Item4]="'Average Revenue'"
-    [Count4]="20"
-    [Button4]="'Manage Users'"
-    [ButtonLink4]="'/Print Report'"
-  ></app-analytics-dashboard>
-</ng-container>
 
+<div class="container-fluid">
 
+  <!-- Main Content -->
+  <div class="main-content">
+    <app-banner 
+      [Title]="'Movie Wizard Administration'"
+      [Description]="'Welcome to the Admin Dashboard. Here, you can manage user accounts, oversee site settings, and review system logs. Use the navigation menu to access different administrative functions and configure the application according to your needs. If you encounter any issues, please refer to the help section or contact support'">
+      <select class="period-selector">
+        <option>Last 7 Days</option>
+        <option>Last 30 Days</option>
+        <option>All Time</option>
+      </select>
+    </app-banner>
 
-<!--<h2>User List</h2>
-<p>Total Users : {{userCount}}</p>
-<table class="table table-hover">
-  <thead class="table-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">User ID</th>
-      <th scope="col">User Name</th>
-      <th scope="col">Password</th>
-      <th scope="col">Phone Number</th>
-      <th scope="col">Email</th>
-      <th scope="col">Profile Photo</th>
-      <th scope="col">Type</th>
-      <th scope="col">Status</th>
-      <th scope="col">Created By</th>
-      <th scope="col">Created Date</th>
-      <th scope="col">Updated By</th>
-      <th scope="col">Updated Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users; let i = index">
-      <th scope="row">{{ i + 1 }}</th>
-      <td>{{ user.userId }}</td>
-      <td>{{ user.userName }}</td>
-      <td>{{ user.password }}</td>
-      <td>{{ user.phoneNumber }}</td>
-      <td>{{ user.email }}</td>
-      <td>{{ user.profilePhoto }}</td>
-      <td>
-        <ng-container *ngIf="user.isAdmin">
-          <span class="badge rounded-pill text-bg-primary">Administrator</span>
-        </ng-container>
-      </td>
-      <td> <ng-container *ngIf="user.isActive; else inActive">
-        <span class="badge rounded-pill text-bg-success">Active</span>
-      </ng-container>
-      <ng-template #inActive>
-        <span class="badge rounded-pill text-bg-secondary">Inactive</span>
-      </ng-template></td>
-      <td>{{ user.createdBy }}</td>
-      <td>{{ user.createdDate }}</td>
-      <td>{{ user.updatedBy }}</td>
-      <td>{{ user.updatedDate }}</td>
-    </tr>
-  </tbody>
-</table>
+    <!-- Analytics Dashboard -->
+    <ng-container *ngIf="userCount !== null">
+      <div class="analytics-dashboard">
+        <div class="metric-card">
+          <div class="metric-header">
+            <i class="fas fa-users"></i>
+            <h3>Total Users</h3>
+          </div>
+          <p>{{ userCount }}</p>
+          <div class="trend positive">
+            <i class="fas fa-arrow-up"></i>
+            <span>+10%</span>
+          </div>
+          <button [routerLink]="['/ManageUsers']" class="btn btn-outline-primary">Manage Users</button>
+        </div>
+        <div class="metric-card">
+          <div class="metric-header">
+            <i class="fas fa-film"></i>
+            <h3>Total Movies</h3>
+          </div>
+          <p>10</p>
+          <div class="trend negative">
+            <i class="fas fa-arrow-down"></i>
+            <span>-5%</span>
+          </div>
+          <button [routerLink]="['/ManageMovies']" class="btn btn-outline-primary">Manage Movies</button>
+        </div>
+        <div class="metric-card">
+          <div class="metric-header">
+            <i class="fas fa-dollar-sign"></i>
+            <h3>Total Revenue</h3>
+          </div>
+          <p>{{ 250 }}</p>
+          <div class="trend positive">
+            <i class="fas fa-arrow-up"></i>
+            <span>+15%</span>
+          </div>
+          <button [routerLink]="['/RevenuePage']" class="btn btn-outline-primary">Checkout Revenue</button>
+        </div>
+        <div class="metric-card">
+          <div class="metric-header">
+            <i class="fas fa-chart-line"></i>
+            <h3>Average Revenue</h3>
+          </div>
+          <p>{{ 20 }}</p>
+          <div class="trend negative">
+            <i class="fas fa-arrow-down"></i>
+            <span>-8%</span>
+          </div>
+          <button [routerLink]="['/Print Report']" class="btn btn-outline-primary">Print Report</button>
+        </div>
+      </div>
+    </ng-container>
 
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Add event listener for switch input
-    document.getElementById('flexSwitchCheckChecked').addEventListener('change', function(event) {
-      const isChecked = event.target.checked;
-      const switchLabel = document.getElementById('switchLabel');
-      
-      switchLabel.textContent = isChecked ? 'Active' : 'Inactive';
-    });
-
-    // Add event listener for file upload input
-    document.getElementById('fileUpload').addEventListener('change', function(event) {
-      const fileInput = event.target;
-      const file = fileInput.files[0];
-      const allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
-      const errorDiv = document.getElementById('fileError');
-
-      if (file && !allowedTypes.includes(file.type)) {
-        errorDiv.style.display = 'block';
-        fileInput.value = ''; // Clear the input
-      } else {  
-        errorDiv.style.display = 'none';
-      }
-    });
-  });
-</script>-->
+    <!-- Progress Section -->
+    <div class="card progress-section">
+      <h3>Progress Overview</h3>
+      <div class="progress-item">
+        <span>Revenue Target</span>
+        <div class="progress">
+          <div class="progress-bar bg-success" style="width: 71%">71%</div>
+        </div>
+      </div>
+      <div class="progress-item">
+        <span>User Growth Target</span>
+        <div class="progress">
+          <div class="progress-bar bg-warning" style="width: 54%">54%</div>
+        </div>
+      </div>
+      <div class="progress-item">
+        <span>Movie Catalog Expansion</span>
+        <div class="progress">
+          <div class="progress-bar bg-info" style="width: 32%">32%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
