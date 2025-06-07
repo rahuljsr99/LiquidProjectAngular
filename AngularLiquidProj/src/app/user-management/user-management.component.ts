@@ -116,11 +116,11 @@ onCellValueChanged(event: CellValueChangedEvent) {
       headerCheckboxSelection: true
     },
     { field:'userID' ,headerName: 'User ID', width: 40 },
-    { field: 'username', headerName: 'User Name'},
+    { field: 'username', tooltipField: 'username',headerName: 'User Name'},
     {field:'passwordHash', headerName:'Password',editable: true},
     { field: 'firstName', editable: true },
     { field: 'lastName', editable: true },
-    { field: 'email', editable: true },
+    { field: 'email', tooltipField:'email', wrapText:true, resizable:true, autoHeight:true, editable: true },
     {
       field: 'isActive',
       headerName: 'Status',
@@ -131,7 +131,7 @@ onCellValueChanged(event: CellValueChangedEvent) {
     },
     { field: 'createdBy',  headerName: 'Created by' },
      {
-  field: 'createdAt',
+  field: 'createdAt', tooltipField:'email',  resizable:true, autoHeight:true,
   headerName: 'Created On',
   valueFormatter: (params) => {
     const date = new Date(params.value);
@@ -148,7 +148,7 @@ onCellValueChanged(event: CellValueChangedEvent) {
     return `${day}${daySuffix(day)} ${date.toLocaleDateString('en-US', options)} - ${date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true })}`;
   }
 },
- { field: 'updatedBy',  headerName: 'Last Updated By' },
+ { field: 'updatedBy',  tooltipField:'email', resizable:true, autoHeight:true, headerName: 'Last Updated By' },
  {
   field: 'updatedAt',
   headerName: 'Last Updated On',
