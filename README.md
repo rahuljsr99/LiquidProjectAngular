@@ -10,7 +10,7 @@ Screenshots :
 --Buy page 
 ![image](https://github.com/user-attachments/assets/b0a339be-b15c-4675-a1cb-1aa250771307)
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/f2e0aa60-c6d0-4848-be22-32b8eb88e71b)
 
 
 --invoice page 
@@ -20,6 +20,9 @@ Screenshots :
 
 --Movie page (Development in progress)
 ![image](https://github.com/user-attachments/assets/baa503b4-e218-4ccb-8433-00f1a9655bc8)
+Search in action
+![image](https://github.com/user-attachments/assets/2efb448e-d376-40a1-9cdb-c9814f3be452)
+
 
 
 
