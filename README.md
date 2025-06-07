@@ -1,4 +1,5 @@
-📽️ LiquidProjectAngular - Movie Purchase & Admin Portal
+📽️ LiquidProjectAngular - Movie Purchase & Admin Portal 
+(In development, Progress will be updated here with updated screenshots.)
 
 A responsive Angular-based web app for browsing, purchasing, and managing movie content. It includes role-based access for admins and users, and integrates AG Grid for data management.
 🛠️ Tech Stack
