@@ -10,7 +10,8 @@ Screenshots :
 --Buy page 
 ![image](https://github.com/user-attachments/assets/b0a339be-b15c-4675-a1cb-1aa250771307)
 
-![image](https://github.com/user-attachments/assets/f2e0aa60-c6d0-4848-be22-32b8eb88e71b)
+![image](https://github.com/user-attachments/assets/33352fa6-347d-48d2-b6dc-d409d1d48925)
+
 
 
 --invoice page 
@@ -19,7 +20,8 @@ Screenshots :
 ![image](https://github.com/user-attachments/assets/da26bc40-500b-47a4-8dd4-2eaab3147234)
 
 --Movie page (Development in progress)
-![image](https://github.com/user-attachments/assets/baa503b4-e218-4ccb-8433-00f1a9655bc8)
+![image](https://github.com/user-attachments/assets/39cdc06b-1513-4cd3-a8a5-0b2ca06ae85c)
+
 Search in action
 ![image](https://github.com/user-attachments/assets/2efb448e-d376-40a1-9cdb-c9814f3be452)
 
@@ -27,10 +29,12 @@ Search in action
 
 
 --Admin Page 
-![image](https://github.com/user-attachments/assets/08b67279-f3f2-4af1-b55b-6d12f8f159d9)
+![image](https://github.com/user-attachments/assets/6a50d605-5c63-4559-a3b8-f00bf1adb9b0)
+
 
 --Manage Users
-![image](https://github.com/user-attachments/assets/7fbd379c-af5b-4177-839d-c5a062ff0f68)
+![image](https://github.com/user-attachments/assets/b2c75eda-13ee-452d-998a-6832869aaab1)
+
 **used AG Grid and cell editing and saving
 
 --Add User
@@ -50,4 +54,4 @@ Install Angular Animations (required by Angular Material):
 
 
 npm install @angular/animations
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/35bc90c2-0995-4571-b6da-f5bab4cc0acd)
