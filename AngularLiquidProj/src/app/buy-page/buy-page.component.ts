@@ -88,6 +88,7 @@ export class BuyPageComponent implements OnInit {
       MovieName: this.selectedMovie.title,
       DirectorName: this.selectedMovie.director,
       Amount: this.selectedMovie.price,
+      ItemType: 'Movie',
       TransactionNumber: this.generateTransactionNumber(),
     };
 

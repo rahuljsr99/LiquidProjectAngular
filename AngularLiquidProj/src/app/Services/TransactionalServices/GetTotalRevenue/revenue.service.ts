@@ -9,19 +9,9 @@ export class RevenueService {
 
   constructor(private http: HttpClient) { }
 
-  GetTotalRevenue(): Observable<number> {
+  GetTotalRevenue(): Observable<any> {
    // return of(10000); // Mocked response
      return this.http.get<number>("https://localhost:44310/api/Transactional/GetTotalRevenue");
-  }
-
-  GetMovieRevenue(): Observable<number> {
-    return of(6000); // Mocked response
-    // Add actual API call
-  }
-
-  GetTVShowRevenue(): Observable<number> {
-    return of(4000); // Mocked response
-    // Add actual API call
   }
 
   GetTotalSales(): Observable<{ total: number, movies: number, tvShows: number }> {

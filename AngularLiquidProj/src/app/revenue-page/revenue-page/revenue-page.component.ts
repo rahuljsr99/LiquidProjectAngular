@@ -37,19 +37,11 @@ export class RevenuePageComponent implements OnInit {
 
   loadData(): void {
     this.revenueService.GetTotalRevenue().subscribe(data => {
-      this.totalRevenue = data;
-    });
-
-    this.revenueService.GetMovieRevenue().subscribe(data => {
-      this.movieRevenue = data;
+      this.totalRevenue = data.totalRevenueAmount;
+      this.movieRevenue = data.totalRevenueFromMovies;
+      this.tvShowRevenue = data.totalRevenueFromTVShows;
       this.updateChart();
     });
-
-    this.revenueService.GetTVShowRevenue().subscribe(data => {
-      this.tvShowRevenue = data;
-      this.updateChart();
-    });
-
     this.revenueService.GetTotalSales().subscribe(data => {
       this.totalSales = data;
     });
